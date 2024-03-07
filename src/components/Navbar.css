@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+.navbar-header a{
+    font-family: 'Lobster', cursive;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navlink{
+  color:#fff !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  text-transform: capitalize !important;
+  font-size: 0.90rem !important;
+}
+
+.navbar{
+  background-color: #3c879e !important;
+}
