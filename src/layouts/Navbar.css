@@ -18,3 +18,7 @@
 .navbar{
   background-color: #3c879e !important;
 }
+
+div div a:hover {
+  color: #fff;
+}
