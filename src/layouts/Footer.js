@@ -28,10 +28,10 @@ export const Footer = () => {
             <h4>get help</h4>
             <ul>
               <li>
-                <a href="index.html#faq">Patient Guide</a>
+                <a href="#">Patient Guide</a>
               </li>
               <li>
-                <a href="contact.html">contact</a>
+                <a href="#">contact</a>
               </li>
             </ul>
           </div>

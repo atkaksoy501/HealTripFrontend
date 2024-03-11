@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+.banner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #295d6d;
+    text-align: center;
+    z-index: 1;
+    opacity: 1;
+    background-image: url('../images/hero-bg.jpg');
+    background-color: rgba(255,255,255,0.65);
+    background-blend-mode: lighten;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.banner .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner h1 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 5rem;
+}
+
+.banner p {
+    font-weight: 700;
+}
+
+.button:hover{
+    background-color: #fff !important; 
+    color: #295d6d;
+}   
