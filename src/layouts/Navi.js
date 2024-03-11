@@ -84,6 +84,11 @@ export const Navi = () => {
                       Patient Guide
                     </NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink href="#">
+                    {isAuthenticated ? <SignedIn signOut = {handleSignOut}/> : <SignedOut signIn = {handleSignIn} />}
+                    </NavLink>
+                  </NavItem>
                 </Nav>
               </Collapse>
             )}
