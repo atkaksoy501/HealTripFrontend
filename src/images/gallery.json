@@ -1,0 +1,36 @@
+{
+    "slide": [
+      {
+        "src": "../images/gallery-1.jpg",
+        "alt": "Image 1 for carousel"
+      },
+      {
+        "src": "../images/gallery-1.jpg",
+        "alt": "Image 2 for carousel"
+      },
+      {
+        "src": "../images/gallery-3.jpg",
+        "alt": "Image 3 for carousel"
+      },
+      {
+        "src": "../images/gallery-4.jpg",
+        "alt": "Image 3 for carousel"
+      },
+      {
+        "src": "../images/gallery-5.jpg",
+        "alt": "Image 3 for carousel"
+      },
+      {
+        "src": "../images/gallery-6.jpg",
+        "alt": "Image 3 for carousel"
+      },
+      {
+        "src": "../images/gallery-7.jpg",
+        "alt": "Image 3 for carousel"
+      },
+      {
+        "src": "../images/gallery-8.jpg",
+        "alt": "Image 3 for carousel"
+      }
+    ]
+  }

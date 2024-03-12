@@ -1,0 +1,93 @@
+.burak{
+  background-color: #3c879e;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 450px;
+}
+  
+  .slide {
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 7px #666;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .slide::selection {
+    background-color: transparent;
+    
+  }
+  
+  .slide-hidden {
+    display: none;
+  }
+  
+  .arrow {
+    position: absolute;
+    filter: drop-shadow(0px 0px 5px #fff);
+    width: 2rem;
+    height: 2rem;
+    color: #3c879e;
+  }
+  
+  .arrow:hover {
+    cursor: pointer;
+  }
+  
+  .arrow-left {
+    left: 1rem;
+  }
+  
+  .arrow-right {
+    right: 1rem;
+  }
+  
+  .indicators {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+  }
+  
+  .indicator {
+    background-color: white;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px #555;
+    margin: 0 0.2rem;
+    cursor: pointer;
+  }
+  
+  .indicator-inactive {
+    background-color: grey;
+  }
+
+  .title{
+    margin: 0 0 0 0;
+    padding-bottom: 60px;
+    color: #fff;
+    font-size: 36px;
+  }
+
+  .title::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    background-color: #214c5a;
+    height: 3px;
+    box-sizing: border-box;
+    width: 150px;
+    left: 45%;
+  }
