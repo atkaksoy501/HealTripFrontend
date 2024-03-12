@@ -13,6 +13,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import SignedOut from "./SignedOut";
 import SignedIn from "./SignedIn";
+import { Link } from "react-router-dom";
 
 export const Navi = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -51,7 +52,7 @@ export const Navi = () => {
               className="navbar-header"
               sx={{ flexGrow: 1 }}
             >
-              <a href="#">HealTrip</a>
+              <Link to="/">HealTrip</Link>
             </Typography>
           </div>
         </div>
@@ -67,25 +68,32 @@ export const Navi = () => {
               <Collapse isOpen={isMobile} navbar>
                 <Nav className="me-auto" navbar>
                   <NavItem>
-                    <NavLink href="#" className="navlink">
+                    <NavLink className="navlink">
                       Treatments
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink
-                      className="navlink"
-                      href="https://github.com/reactstrap/reactstrap"
-                    >
+                    <NavLink className="navlink">
                       About Us
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink className="navlink" href="#">
-                      Patient Guide
+                    <NavLink className="navlink">
+                      Guidance
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#">
+                    <NavLink className="navlink">
+                      Blogs
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="navlink">
+                      Contact
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink>
                     {isAuthenticated ? <SignedIn signOut = {handleSignOut}/> : <SignedOut signIn = {handleSignIn} />}
                     </NavLink>
                   </NavItem>
@@ -95,9 +103,11 @@ export const Navi = () => {
           </>
         ) : (
           <Stack direction="row" spacing={2}>
-            <Button className="navlink">Treatments</Button>
-            <Button className="navlink">About Us</Button>
-            <Button className="navlink">Patient Guide</Button>
+            <Link to="/treatments"><Button className="navlink">Treatments</Button></Link>
+            <Link to="/about-us"><Button className="navlink">About Us</Button></Link>
+            <Link to="/guidance"><Button className="navlink">Guidance</Button></Link>
+            <Link to="/blogs"><Button className="navlink">Blogs</Button></Link>
+            <Link to="/contact"><Button className="navlink">Contact</Button></Link>
             {isAuthenticated ? <SignedIn signOut = {handleSignOut}/> : <SignedOut signIn = {handleSignIn} />}
           </Stack>
         )}
