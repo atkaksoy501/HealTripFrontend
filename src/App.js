@@ -1,24 +1,29 @@
-import {Navi} from './layouts/Navi'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navi } from "./layouts/Navi";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { Footer } from "./layouts/Footer";
 
-import './App.css'
-import { Footer } from './layouts/Footer';
-import { MainPage } from './pages/MainPage';
-import { MyGallery } from './pages/MyGallery';
-import ExperienceSection from './pages/ExperienceSection';
-import { MyGallery2 } from './pages/MyGallery2';
+import Treatments from "./pages/Treatments";
+import AboutUs from "./pages/AboutUs";
+import Guidance from "./pages/Guidance";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <div className='App'>
-      <Navi></Navi>
-      <MainPage></MainPage>
-      <MyGallery2></MyGallery2>
-      <h1>buba</h1>
-      <h1>buba</h1>
-      <h1>buba</h1>
-      <h1>buba</h1>
-      <ExperienceSection></ExperienceSection>
-      <Footer></Footer>
+    <div className="App">
+      <Navi />
+      <Routes>
+        <Route exact path="/" Component={Home} />
+        <Route path="/treatments" Component={Treatments} />
+        <Route path="/about-us" Component={AboutUs} />
+        <Route path="/guidance" Component={Guidance} />
+        <Route path="/blogs" Component={Blogs} />
+        <Route path="/contact" Component={Contact} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
