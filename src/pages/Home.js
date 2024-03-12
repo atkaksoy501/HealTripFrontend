@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <MainPage />
-      <MyGallery />
+      <MyGallery/>
       <h1>buba</h1>
       <h1>buba</h1>
       <h1>buba</h1>
