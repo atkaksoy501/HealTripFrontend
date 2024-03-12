@@ -7,7 +7,7 @@ export const MainPage = () => {
   return (
     <div class="banner">
       <div class="container">
-        <h1>WELCOME TO HEAL TRIP</h1>
+        <h1>WELCOME TO HEALTRIP</h1>
         <p>
           We are team of talented doctors providing healthcare services with
           advance technologies.

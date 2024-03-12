@@ -56,6 +56,6 @@ export const MyGallery = () => {
       })}
     </span>
   </div></div>
-    
+
   );
 };

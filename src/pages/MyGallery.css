@@ -1,6 +1,6 @@
 .burak{
   background-color: #3c879e;
-  height: 100vh;
+  height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,13 +11,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 750px;
-    height: 450px;
-}
+    width: 60%;
+    height: 500px;
+    top: 10px;
+  }
   
   .slide {
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 7px #666;
     width: 100%;
     height: 100%;
     
@@ -65,29 +65,15 @@
     border-radius: 100%;
     border: none;
     outline: none;
-    box-shadow: 0px 0px 5px #555;
     margin: 0 0.2rem;
     cursor: pointer;
   }
   
   .indicator-inactive {
-    background-color: grey;
+    background-color: #3c879e;
   }
 
   .title{
-    margin: 0 0 0 0;
-    padding-bottom: 60px;
     color: #fff;
     font-size: 36px;
-  }
-
-  .title::before {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    background-color: #214c5a;
-    height: 3px;
-    box-sizing: border-box;
-    width: 150px;
-    left: 45%;
   }

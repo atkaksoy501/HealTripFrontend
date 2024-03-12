@@ -51,7 +51,7 @@ export const Navi = () => {
               className="navbar-header"
               sx={{ flexGrow: 1 }}
             >
-              <a href="#">Heal Trip</a>
+              <a href="#">HealTrip</a>
             </Typography>
           </div>
         </div>
