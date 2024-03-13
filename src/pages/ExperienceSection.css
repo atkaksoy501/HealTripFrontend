@@ -33,6 +33,10 @@ display: inline-block;
     color: #14303a !important;
     margin: 0 !important;
     margin-bottom: 15px !important;
+  }
+
+#last-container{
+  border-right: 0px;
 }
 
 @media screen and (max-width: 900px) {
