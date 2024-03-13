@@ -41,7 +41,7 @@ const ExperienceSection = () => {
             {countrySprings.number.to((n) => n.toFixed(0))}
           </animated.span>{" "}+
         </p>
-        <p>Countries+</p>
+        <p>Countries</p>
       </div>
 
       <div className="container-div">
