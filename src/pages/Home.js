@@ -8,11 +8,14 @@ export default function Home() {
     <div>
       <MainPage />
       <MyGallery/>
-      <h1>buba</h1>
-      <h1>buba</h1>
-      <h1>buba</h1>
-      <h1>buba</h1>
+      <h1>Buba</h1>
+      <h1>Buba</h1>
+      <h1>Buba</h1>
       <ExperienceSection></ExperienceSection>
+      <h1>Buba</h1>
+      <h1>Buba</h1>
+      <h1>Buba</h1>
+
     </div>
   );
 }

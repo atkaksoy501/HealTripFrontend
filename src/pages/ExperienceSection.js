@@ -26,31 +26,31 @@ const ExperienceSection = () => {
 
   return (
     <div className="container-experience">
-      <div>
-        <p >
+      <div className="container-div">
+        <p className="counter">
           <animated.span style={yearSprings}>
             {yearSprings.number.to((n) => n.toFixed(0))}
-          </animated.span>{" "}
+          </animated.span>{" "}+
         </p>
-        <p>Years of Experience+</p>
+        <p>Years of Experience</p>
       </div>
 
-      <div>
-        <p>
+      <div className="container-div">
+        <p className="counter">
           <animated.span style={countrySprings}>
             {countrySprings.number.to((n) => n.toFixed(0))}
-          </animated.span>{" "}
+          </animated.span>{" "}+
         </p>
         <p>Countries+</p>
       </div>
 
-      <div>
-        <p>
+      <div className="container-div">
+        <p className="counter">
           <animated.span style={numberSprings}>
             {numberSprings.number.to((n) => n.toFixed(0))}
-          </animated.span>{" "}
+          </animated.span>{" "}+
         </p>
-        <p>Satisfied Patients+</p>
+        <p>Satisfied Patients</p>
       </div>
     </div>
   );
