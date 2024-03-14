@@ -16,7 +16,9 @@ export const BlogSectionInHome = () => {
           textAlign: "center",
           color: "#3c879e",
           fontWeight: "1000",
-          marginBottom:"0"
+          fontSize:"2.5rem",
+          marginBottom:"0",
+          fontFamily: "Oswald , sans-serif"
         }}
       >
         HEALTRIP BLOG

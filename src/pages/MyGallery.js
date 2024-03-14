@@ -15,7 +15,7 @@ export const MyGallery = () => {
 
   return (
     <div style={{ backgroundColor: "#3c879e", height: "100%", padding:"40px 0"}}>
-        <h1 style={{textAlign:"center", color:"#fff", padding:"4px"}}>GALLERY</h1>
+        <h1 style={{textAlign:"center", color:"#fff", padding:"4px", fontFamily:"Oswald, sans-serif", fontSize:"2.5rem"}}>GALLERY</h1>
       <Carousel
         data-bs-theme="primary"
         style={{margin: "0 auto", width:"90%"}}
