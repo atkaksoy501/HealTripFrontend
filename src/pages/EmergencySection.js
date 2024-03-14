@@ -9,7 +9,7 @@ export const EmergencySection = () => {
           <Col className="text-center">
             <h1>In an emergency? Need help now?</h1>
             <p>
-              Regrettably, dental emergencies can arise unexpectedly, causing
+              Regrettably, healthy emergencies can arise unexpectedly, causing
               distress and discomfort. At make an appointment section, you can
               take immediate assistance from our dedicated team. We comprehend
               the urgency of your situation and are committed to providing swift
