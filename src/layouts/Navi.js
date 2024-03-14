@@ -16,19 +16,19 @@ import SignedIn from "./SignedIn";
 import { Link } from "react-router-dom";
 
 export const Navi = () => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:770px)");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  
+
   function handleSignOut(params) {
-    setIsAuthenticated(false)
+    setIsAuthenticated(false);
   }
 
   function handleSignIn(params) {
-    setIsAuthenticated(true)
+    setIsAuthenticated(true);
   }
 
   return (
@@ -67,34 +67,38 @@ export const Navi = () => {
             {menuOpen && (
               <Collapse isOpen={isMobile} navbar>
                 <Nav className="me-auto" navbar>
-                  <NavItem>
-                    <NavLink className="navlink">
-                      Treatments
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink className="navlink">
-                      About Us
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink className="navlink">
-                      Guidance
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink className="navlink">
-                      Blogs
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink className="navlink">
-                      Contact
-                    </NavLink>
-                  </NavItem>
+                  <Link to="/treatments">
+                    <NavItem>
+                      <NavLink className="navlink">Treatments</NavLink>
+                    </NavItem>
+                  </Link>
+                  <Link to="/about-us">
+                    <NavItem>
+                      <NavLink className="navlink">About Us</NavLink>
+                    </NavItem>
+                  </Link>
+                  <Link to="/guidance">
+                    <NavItem>
+                      <NavLink className="navlink">Guidance</NavLink>
+                    </NavItem>
+                  </Link>
+                  <Link to="/blogs">
+                    <NavItem>
+                      <NavLink className="navlink">Blogs</NavLink>
+                    </NavItem>
+                  </Link>
+                  <Link to="/contact">
+                    <NavItem>
+                      <NavLink className="navlink">Contact</NavLink>
+                    </NavItem>
+                  </Link>
                   <NavItem>
                     <NavLink>
-                    {isAuthenticated ? <SignedIn signOut = {handleSignOut}/> : <SignedOut signIn = {handleSignIn} />}
+                      {isAuthenticated ? (
+                        <SignedIn signOut={handleSignOut} />
+                      ) : (
+                        <SignedOut signIn={handleSignIn} />
+                      )}
                     </NavLink>
                   </NavItem>
                 </Nav>
@@ -103,12 +107,26 @@ export const Navi = () => {
           </>
         ) : (
           <Stack direction="row" spacing={2}>
-            <Link to="/treatments"><Button className="navlink">Treatments</Button></Link>
-            <Link to="/about-us"><Button className="navlink">About Us</Button></Link>
-            <Link to="/guidance"><Button className="navlink">Guidance</Button></Link>
-            <Link to="/blogs"><Button className="navlink">Blogs</Button></Link>
-            <Link to="/contact"><Button className="navlink">Contact</Button></Link>
-            {isAuthenticated ? <SignedIn signOut = {handleSignOut}/> : <SignedOut signIn = {handleSignIn} />}
+            <Link to="/treatments">
+              <Button className="navlink">Treatments</Button>
+            </Link>
+            <Link to="/about-us">
+              <Button className="navlink">About Us</Button>
+            </Link>
+            <Link to="/guidance">
+              <Button className="navlink">Guidance</Button>
+            </Link>
+            <Link to="/blogs">
+              <Button className="navlink">Blogs</Button>
+            </Link>
+            <Link to="/contact">
+              <Button className="navlink">Contact</Button>
+            </Link>
+            {isAuthenticated ? (
+              <SignedIn signOut={handleSignOut} />
+            ) : (
+              <SignedOut signIn={handleSignIn} />
+            )}
           </Stack>
         )}
       </Navbar>
