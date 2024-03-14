@@ -1,0 +1,22 @@
+.content_emergency {
+  padding: 60px 0;
+}
+
+.content_emergency h1 {
+  color: #3c879e;
+  font-size: 36px;
+  font-family: Oswald, sans-serif;
+}
+
+.content_emergency p {
+  color: #3c879e;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 1.2rem;
+  margin: auto 30px;
+}
+
+.make-an-appointment-button:hover {
+  color: #fff !important;
+  background-color: #3c879e !important;
+}
