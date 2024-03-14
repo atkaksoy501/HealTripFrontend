@@ -22,22 +22,22 @@ export const MyGallery = () => {
       >
         <Carousel.Item>
         <div className="d-flex justify-content-center">
-        <img className="d-block w-25" src={data[0]} alt="First slide" />
-        <img className="d-block w-25" src={data[1]} alt="Second slide" />
+        <img className="d-block w-25" src={data[0]} alt="First slide" style={{marginRight:"30px"}}/>
+        <img className="d-block w-25" src={data[1]} alt="Second slide" style={{marginRight:"30px"}}/>
         <img className="d-block w-25" src={data[2]} alt="Third slide" />
       </div>
         </Carousel.Item>
         <Carousel.Item>
         <div className="d-flex justify-content-center">
-        <img className="d-block w-25" src={data[3]} alt="Second slide" />
-        <img className="d-block w-25" src={data[4]} alt="Second slide" />
+        <img className="d-block w-25" src={data[3]} alt="Second slide" style={{marginRight:"30px"}}/>
+        <img className="d-block w-25" src={data[4]} alt="Second slide" style={{marginRight:"30px"}}/>
         <img className="d-block w-25" src={data[5]} alt="Second slide" />
         </div>
         </Carousel.Item>
         <Carousel.Item>
         <div className="d-flex justify-content-center">
-          <img className="d-block w-25" src={data[6]} alt="Third slide" />
-          <img className="d-block w-25" src={data[7]} alt="Third slide" />
+          <img className="d-block w-25" src={data[6]} alt="Third slide" style={{marginRight:"30px"}} />
+          <img className="d-block w-25" src={data[7]} alt="Third slide" style={{marginRight:"30px"}}/>
           <img className="d-block w-25" src={data[3]} alt="Third slide" />
         </div>
         </Carousel.Item>
