@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Collapse, Navbar, Nav, NavItem, NavLink } from "reactstrap";
+import { Collapse, Navbar, Nav, NavItem, NavLink, DropdownMenu,
+  DropdownItem,
+  Dropdown, DropdownToggle} from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 import HealingIcon from "@mui/icons-material/Healing";
@@ -15,13 +17,17 @@ import SignedOut from "./SignedOut";
 import SignedIn from "./SignedIn";
 import { Link } from "react-router-dom";
 
-export const Navi = () => {
+export const Navi = ({ direction, ...args }) => {
   const isMobile = useMediaQuery("(max-width:770px)");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   function handleSignOut(params) {
     setIsAuthenticated(false);
@@ -107,9 +113,26 @@ export const Navi = () => {
           </>
         ) : (
           <Stack direction="row" spacing={2}>
-            <Link to="/treatments">
-              <Button className="navlink">Treatments</Button>
-            </Link>
+            <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={direction}>
+              <DropdownToggle caret>Treatments</DropdownToggle>
+              <DropdownMenu {...args}>
+                <Link to="/treatments/aesthetic-surgery">
+                  <DropdownItem>Aesthetic Surgery</DropdownItem>
+                </Link>
+                <Link to="/treatments/hair-treatments">
+                  <DropdownItem>Hair Treatments</DropdownItem>
+                </Link>
+                <Link to="/treatments/dental-treatments">
+                  <DropdownItem>Dental Treatments</DropdownItem>
+                </Link>
+                <Link to="/treatments/metabolic-surgery">
+                  <DropdownItem>Metabolic Surgery</DropdownItem>
+                </Link>
+                <Link to="/treatments/eye-diseases">
+                  <DropdownItem>Eye Diseases</DropdownItem>
+                </Link>
+              </DropdownMenu>
+            </Dropdown>
             <Link to="/about-us">
               <Button className="navlink">About Us</Button>
             </Link>
