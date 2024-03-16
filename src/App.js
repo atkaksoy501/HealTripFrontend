@@ -9,7 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import Guidance from "./pages/Guidance";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import AestheticSurgery from "./pages/AestheticSurgery";
 import HairTreatments from "./pages/HairTreatments";
 import DentalTreatments from "./pages/DentalTreatments";
