@@ -116,19 +116,19 @@ export const Navi = ({ direction, ...args }) => {
             <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={direction}>
               <DropdownToggle caret style={{backgroundColor:"#3c879e", border:"none", fontFamily:"Arial, Helvetica, sans-serif", fontSize:"0.95rem", marginTop:"2px", textTransform:"capitalize"}}>Treatments</DropdownToggle>
               <DropdownMenu {...args}>
-                <Link to="/treatments/aesthetic-surgery">
+                <Link to="/treatments">
                   <DropdownItem>Aesthetic Surgery</DropdownItem>
                 </Link>
-                <Link to="/treatments/hair-treatments">
+                <Link to="/treatments">
                   <DropdownItem>Hair Treatments</DropdownItem>
                 </Link>
-                <Link to="/treatments/dental-treatments">
+                <Link to="/treatments">
                   <DropdownItem>Dental Treatments</DropdownItem>
                 </Link>
-                <Link to="/treatments/metabolic-surgery">
+                <Link to="/treatments">
                   <DropdownItem>Metabolic Surgery</DropdownItem>
                 </Link>
-                <Link to="/treatments/eye-diseases">
+                <Link to="/treatments">
                   <DropdownItem>Eye Diseases</DropdownItem>
                 </Link>
               </DropdownMenu>
