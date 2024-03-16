@@ -8,6 +8,8 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer class="footer">
@@ -17,10 +19,13 @@ export const Footer = () => {
             <h4>company</h4>
             <ul>
               <li>
-                <a href="about.html">about us</a>
+              <Link to="/about-us">about us</Link>
               </li>
               <li>
-                <a href="dentists.html">Treatments</a>
+              <Link to="/treatments">Treatments</Link>
+              </li>
+              <li>
+              <Link to="/blogs">Blogs</Link>
               </li>
             </ul>
           </div>
@@ -28,10 +33,10 @@ export const Footer = () => {
             <h4>get help</h4>
             <ul>
               <li>
-                <a href="#">Patient Guide</a>
+              <Link to="/guidance">Guidance</Link>
               </li>
               <li>
-                <a href="#">contact</a>
+              <Link to="/contact">contact</Link>
               </li>
             </ul>
           </div>

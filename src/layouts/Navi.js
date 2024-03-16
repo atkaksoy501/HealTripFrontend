@@ -114,7 +114,7 @@ export const Navi = ({ direction, ...args }) => {
         ) : (
           <Stack direction="row" spacing={2}>
             <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={direction}>
-              <DropdownToggle caret>Treatments</DropdownToggle>
+              <DropdownToggle caret style={{backgroundColor:"#3c879e", border:"none", fontFamily:"Arial, Helvetica, sans-serif", fontSize:"0.95rem", marginTop:"2px", textTransform:"capitalize"}}>Treatments</DropdownToggle>
               <DropdownMenu {...args}>
                 <Link to="/treatments/aesthetic-surgery">
                   <DropdownItem>Aesthetic Surgery</DropdownItem>

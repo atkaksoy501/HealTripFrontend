@@ -1,14 +1,14 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./MyGallery.css";
-import photo1 from "../images/gallery-1.jpg";
-import photo2 from "../images/gallery-2.jpg";
-import photo3 from "../images/gallery-3.jpg";
-import photo4 from "../images/gallery-4.jpg";
-import photo5 from "../images/gallery-5.jpg";
-import photo6 from "../images/gallery-6.jpg";
-import photo7 from "../images/gallery-7.jpg";
-import photo8 from "../images/gallery-8.jpg";
+import photo1 from "./galleryImages/gallery-1.jpg";
+import photo2 from "./galleryImages/gallery-2.jpg";
+import photo3 from "./galleryImages/gallery-3.jpg";
+import photo4 from "./galleryImages/gallery-4.jpg";
+import photo5 from "./galleryImages/gallery-5.jpg";
+import photo6 from "./galleryImages/gallery-6.jpg";
+import photo7 from "./galleryImages/gallery-7.jpg";
+import photo8 from "./galleryImages/gallery-8.jpg";
 
 export const MyGallery = () => {
   const data = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8];
