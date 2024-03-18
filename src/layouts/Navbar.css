@@ -22,3 +22,16 @@
 div div a:hover {
   color: #fff;
 }
+
+.medical-advice-button{
+  color:#fff !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  text-transform: capitalize !important;
+  font-size: 0.90rem !important;
+  
+}
+
+.medical-advice-button:hover{
+  background-color: #fff !important; 
+  color: #214c5a !important;
+}   

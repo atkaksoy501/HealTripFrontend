@@ -128,6 +128,9 @@ export const Navi = ({ direction, ...args }) => {
             <Link to="/contact">
               <Button className="navlink">Contact</Button>
             </Link>
+            <Link to="/contact">
+              <Button className="medical-advice-button" style={{backgroundColor: "#265867", borderRadius: "30px", width:"150px", fontWeight:"bold"}}>Get Medical Advice</Button>
+            </Link>
             {isAuthenticated ? (
               <SignedIn signOut={handleSignOut} />
             ) : (
