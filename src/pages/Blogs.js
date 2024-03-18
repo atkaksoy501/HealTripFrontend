@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Blogs() {
   return (
-    <div>Blogs</div>
+    <div style={{marginTop:"59px"}}><h1>Blogs</h1></div>
   )
 }

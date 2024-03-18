@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Contact() {
   return (
-    <div>Contact</div>
+    <div style={{marginTop:"59px"}}><h1>Contact</h1></div>
   )
 }
 

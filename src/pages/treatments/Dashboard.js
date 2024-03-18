@@ -7,7 +7,7 @@ import "./Dashboard.css";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div style={{marginTop:"59px"}}>
       <Container className="main">
         <Grid>
           <GridRow>

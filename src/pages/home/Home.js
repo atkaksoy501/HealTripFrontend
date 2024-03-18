@@ -7,7 +7,7 @@ import { EmergencySection } from "./EmergencySection";
 
 export default function Home() {
   return (
-    <div>
+    <div style={{marginTop:"59px"}}>
       <MainPage/>
       <h1>Treatments</h1>
       <h1>Treatments</h1>
