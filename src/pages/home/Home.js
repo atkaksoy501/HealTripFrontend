@@ -8,7 +8,12 @@ import { EmergencySection } from "./EmergencySection";
 export default function Home() {
   return (
     <div>
-      <MainPage />
+      <MainPage/>
+      <h1>Treatments</h1>
+      <h1>Treatments</h1>
+      <h1>Treatments</h1>
+      <h1>Treatments</h1>
+      <h1>Treatments</h1>
       <MyGallery/>
       <EmergencySection></EmergencySection>
       <ExperienceSection></ExperienceSection>

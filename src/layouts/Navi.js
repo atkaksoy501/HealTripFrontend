@@ -38,7 +38,7 @@ export const Navi = ({ direction, ...args }) => {
   }
 
   return (
-    <div>
+    <div style={{position:"fixed", top:"0", "width": "100%", zIndex:"1000"}}>
       <Navbar className="navbar">
         <div style={{ display: "flex", alignItems: "center" }}>
           <IconButton
