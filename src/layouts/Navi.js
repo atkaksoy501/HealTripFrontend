@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Collapse, Navbar, Nav, NavItem, NavLink, DropdownMenu,
-  DropdownItem,
-  Dropdown, DropdownToggle} from "reactstrap";
+import { Collapse, Navbar, Nav, NavItem, NavLink} from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 import HealingIcon from "@mui/icons-material/Healing";
@@ -24,10 +22,6 @@ export const Navi = ({ direction, ...args }) => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   function handleSignOut(params) {
     setIsAuthenticated(false);
