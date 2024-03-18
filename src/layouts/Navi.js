@@ -18,7 +18,7 @@ import SignedIn from "./SignedIn";
 import { Link } from "react-router-dom";
 
 export const Navi = ({ direction, ...args }) => {
-  const isMobile = useMediaQuery("(max-width:770px)");
+  const isMobile = useMediaQuery("(max-width:920px)");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const toggleMenu = () => {
@@ -38,7 +38,7 @@ export const Navi = ({ direction, ...args }) => {
   }
 
   return (
-    <div style={{position:"fixed", top:"0", "width": "100%", zIndex:"1000"}}>
+    <div style={{ position: "fixed", top: "0", width: "100%", zIndex: "1000" }}>
       <Navbar className="navbar">
         <div style={{ display: "flex", alignItems: "center" }}>
           <IconButton
@@ -98,6 +98,23 @@ export const Navi = ({ direction, ...args }) => {
                       <NavLink className="navlink">Contact</NavLink>
                     </NavItem>
                   </Link>
+                  <Link to="/contact">
+                    <NavItem>
+                      <NavLink>
+                        <Button
+                          className="medical-advice-button"
+                          style={{
+                            backgroundColor: "#265867",
+                            borderRadius: "30px",
+                            width: "150px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          Get Medical Advice
+                        </Button>
+                      </NavLink>
+                    </NavItem>
+                  </Link>
                   <NavItem>
                     <NavLink>
                       {isAuthenticated ? (
@@ -129,7 +146,17 @@ export const Navi = ({ direction, ...args }) => {
               <Button className="navlink">Contact</Button>
             </Link>
             <Link to="/contact">
-              <Button className="medical-advice-button" style={{backgroundColor: "#265867", borderRadius: "30px", width:"150px", fontWeight:"bold"}}>Get Medical Advice</Button>
+              <Button
+                className="medical-advice-button"
+                style={{
+                  backgroundColor: "#265867",
+                  borderRadius: "30px",
+                  width: "150px",
+                  fontWeight: "bold",
+                }}
+              >
+                Get Medical Advice
+              </Button>
             </Link>
             {isAuthenticated ? (
               <SignedIn signOut={handleSignOut} />
