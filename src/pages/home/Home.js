@@ -4,16 +4,17 @@ import { MyGallery } from "./MyGallery";
 import ExperienceSection from "./ExperienceSection";
 import { BlogSectionInHome } from "./BlogSectionInHome";
 import { EmergencySection } from "./EmergencySection";
+import { DepartmentsSection } from "./DepartmentsSection";
 
 export default function Home() {
   return (
     <div style={{marginTop:"59px"}}>
       <MainPage/>
-      <h1>Treatments</h1>
-      <h1>Treatments</h1>
-      <h1>Treatments</h1>
-      <h1>Treatments</h1>
-      <h1>Treatments</h1>
+      <DepartmentsSection></DepartmentsSection>
+      <h1>Ömür Baba</h1>
+      <h1>Ömür Baba</h1>
+      <h1>Ömür Baba</h1>
+      <h1>Ömür Baba</h1>
       <MyGallery/>
       <EmergencySection></EmergencySection>
       <ExperienceSection></ExperienceSection>

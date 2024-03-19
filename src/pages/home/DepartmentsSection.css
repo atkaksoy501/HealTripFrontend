@@ -1,0 +1,19 @@
+.carousel-inner img {
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-caption {
+    display: none;
+}
+
+.carousel-inner img {
+    transition: transform 0.5s ease;
+}
+
+.carousel-inner img:hover {
+    transform: scale(1.1);
+}
+
+
+

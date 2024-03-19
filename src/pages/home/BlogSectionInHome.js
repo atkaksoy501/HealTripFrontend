@@ -1,7 +1,7 @@
 import React from "react";
 import "./BlogSectionInHome.css";
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom"; // react-router-dom'dan Link bileşenini ekleyin
+import { Link } from "react-router-dom";
 
 import photo1 from "./blogImages/blog1.jpg";
 import photo2 from "./blogImages/blog2.jpg";
