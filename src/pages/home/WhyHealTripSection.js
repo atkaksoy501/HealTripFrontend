@@ -1,5 +1,4 @@
 import React from "react";
-import "./WhyHealTripSection.css";
 import { Container, Row, Col } from "reactstrap";
 
 import photo1 from "./images/orta_neden_1.png";
