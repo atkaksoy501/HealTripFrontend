@@ -9,16 +9,8 @@ export default function Dashboard() {
   return (
     <div style={{marginTop:"59px"}}>
       <Container className="main">
-        <Grid>
-          <GridRow>
-            <GridColumn width={4}>
-              <Departments />
-            </GridColumn>
-            <GridColumn width={12}>
-              <Treatments />
-            </GridColumn>
-          </GridRow>
-        </Grid>
+        <Departments />
+        <Treatments />
       </Container>
     </div>
   );

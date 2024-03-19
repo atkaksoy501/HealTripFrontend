@@ -7,7 +7,7 @@ import { Footer } from "./layouts/Footer";
 import AboutUs from "./pages/AboutUs";
 import Guidance from "./pages/Guidance";
 import Blogs from "./pages/Blogs";
-import Contact from "./pages/Contact";
+import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
 import Dashboard from "./pages/treatments/Dashboard";
 

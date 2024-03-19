@@ -1,7 +1,5 @@
 import React, { useState, useEffect} from 'react'
-import { Menu,DropdownMenu,
-  DropdownItem,
-  Dropdown } from 'semantic-ui-react'
+import { Menu, MenuItem } from 'semantic-ui-react'
 import DepartmentService from '../../services/departmentService';
 
 export default function Departments() {
@@ -15,17 +13,10 @@ export default function Departments() {
 
   return (
     <div>
-      <Menu vertical>
+      <Menu fluid widths={departments.length}>
         {departments.map((department) => (
-          //<MenuItem key={department.id}>{department.departmentName}</MenuItem>
-          <Dropdown item key={department.id} text={department.departmentName}>
-            <DropdownMenu>
-              <DropdownItem>English</DropdownItem>
-              <DropdownItem>Russian</DropdownItem>
-              <DropdownItem>Spanish</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>   
-        ))}
+          <MenuItem  key={department.id} name={department.departmentName}/>
+        ))}  
       </Menu>
     </div>
   )

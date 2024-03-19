@@ -5,6 +5,7 @@ import { GridColumn, Grid, CardHeader,
   Card } from 'semantic-ui-react'
 import TreatmentService from '../../services/treatmentService'
 import ImageComponentFromBase64 from './ImageComponentFromBase64';
+import "./Treatments.css";
 
 export default function Treatments() {
 
