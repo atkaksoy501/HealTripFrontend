@@ -44,9 +44,9 @@ export const DepartmentsSection = () => {
 
   const getFontSize = () => {
     if (windowWidth <= 900) {
-      return "1.5rem"; 
+      return "1.2rem"; 
     } else {
-      return "2.5rem"; 
+      return "2rem"; 
     }
   };
 
@@ -98,7 +98,7 @@ export const DepartmentsSection = () => {
                       textAlign: "center",
                       width: "auto"
                     }}>
-                      <h2 style={{fontWeight:"600", fontFamily:"Oswald, sans-serif", fontSize: getFontSize(), color:"#fff"}} className="department-names">{departments[index++]?.departmentName}</h2>
+                      <h2 style={{fontWeight:"600", fontFamily:"Oswald, sans-serif", fontSize: getFontSize(), color:"#fff", display:"flex"}} className="department-names">{departments[index++]?.departmentName}</h2>
                     </div>
                   </div>
                 </Link>
