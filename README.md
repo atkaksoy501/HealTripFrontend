@@ -1,3 +1,5 @@
+https://healtrip-frontend.azurewebsites.net/
+
 # HealTripFrontend
 
 Yüklenecek uygulamalar:
