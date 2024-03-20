@@ -13,7 +13,7 @@ export const MainPage = () => {
           advance technologies.
         </p>
         <br></br>
-        <Button className="button" style={{ backgroundColor: '#3c879e', fontSize:"18px", borderRadius: "30px", width:"200px", fontWeight:"bold"}}><a>Learn More</a></Button>
+        <Button className="button" style={{ backgroundColor: '#3c879e', fontSize:"18px", borderRadius: "30px", width:"200px", fontWeight:"bold"}}><span>Learn More</span></Button>
       </div>
     </div>
   );

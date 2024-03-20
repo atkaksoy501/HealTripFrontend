@@ -1,6 +1,7 @@
 import React from 'react'
 import Departments from './Departments'
 import Treatments from './Treatments'
+// eslint-disable-next-line
 import { Container, GridRow, GridColumn, Grid } from 'semantic-ui-react'
 import "./Dashboard.css";
 

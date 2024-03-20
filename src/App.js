@@ -1,5 +1,6 @@
 import { Navi } from "./layouts/Navi";
 import "bootstrap/dist/css/bootstrap.min.css";
+// eslint-disable-next-line
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./layouts/Footer";
