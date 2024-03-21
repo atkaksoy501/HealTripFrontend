@@ -1,0 +1,21 @@
+.blog-link {
+    position: relative;
+    overflow: hidden;
+    color: #3c879e;
+  }
+  
+  .blog-link:hover {
+    color: #3c879e;
+  }
+  
+  .blog-link img {
+    transition: transform 0.5s ease;
+  }
+  
+  .blog-link:hover img {
+    transform: scale(1.05);
+  }
+  
+  .content_text {
+    font-size: 1.1rem;
+  }
