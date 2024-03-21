@@ -14,6 +14,7 @@ import "./Contact.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import MapContainer from "./MapContainer";
 
 export default function Contact() {
   return (
@@ -89,6 +90,9 @@ export default function Contact() {
               </GridColumn>
             </GridRow>
           </Grid>
+          <div style={{marginTop:"2%", marginBottom:"2%"}}>
+            <MapContainer />
+          </div>
         </div>
       </div>
     </div>
