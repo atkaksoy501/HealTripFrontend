@@ -20,3 +20,25 @@
   background-color: #f0f0f0;
   padding: 10px;
 }
+
+.location span{
+  color: white;
+  margin-left: 2%;
+  font-size: medium;
+}
+
+.location span span{
+  margin-left: 6%;
+}
+
+.phone span{
+  color: white;
+  margin-left: 2%;
+  font-size: medium;
+}
+
+.mail span{
+  color: white;
+  margin-left: 2%;
+  font-size: medium;
+}
