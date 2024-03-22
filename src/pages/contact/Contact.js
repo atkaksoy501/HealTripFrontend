@@ -27,9 +27,27 @@ export default function Contact() {
         marginTop: "59px",
       }}
     >
-      <div>
-        <h1>Contact US</h1>
-        <Image src={photo1} fluid />
+      <div
+        className="contact-header"
+        style={{
+          position: "relative",
+          textAlign: "center",
+        }}
+      >
+        <Image style={{opacity:"0.70"}} src={photo1} fluid />
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: "1",
+            padding: "20px",
+            borderRadius: "5px",
+          }}
+        >
+          <h1 style={{ color: "#295d6d", fontSize:"4rem", fontWeight:"600" }}>Contact Us</h1>
+        </div>
       </div>
       <div
         class="contact-mid"
@@ -59,7 +77,7 @@ export default function Contact() {
                   <FormInput width={16} placeholder="Your Message" />
                   <FormCheckbox label="I agree to the Terms and Conditions" />
                   <ButtonGroup widths="3">
-                    <Button type="submit" color="linkedin">
+                    <Button type="submit" className="sendButton">
                       Send
                     </Button>
                   </ButtonGroup>
@@ -70,7 +88,7 @@ export default function Contact() {
                 <div class="location">
                   <FontAwesomeIcon
                     icon={faMapMarkerAlt}
-                    color="#1f88be"
+                    color="#3c879e"
                     style={{ fontSize: "1.2em" }}
                   />
                   <span>
@@ -78,13 +96,13 @@ export default function Contact() {
                   </span>
                 </div>
                 <div class="phone" style={{ marginTop: "2%" }}>
-                  <FontAwesomeIcon icon={faPhone} color="#1f88be" />
+                  <FontAwesomeIcon icon={faPhone} color="#3c879e" />
                   <span>+90 554 382 22 15</span>
                 </div>
                 <div class="phone" style={{ marginTop: "2%" }}>
                   <FontAwesomeIcon
                     icon={faWhatsapp}
-                    color="#1f88be"
+                    color="#3c879e"
                     style={{ fontSize: "1.3em" }}
                   />
                   <span>+90 554 382 22 15</span>
@@ -92,7 +110,7 @@ export default function Contact() {
                 <div class="mail" style={{ marginTop: "2%" }}>
                   <FontAwesomeIcon
                     icon={faEnvelope}
-                    color="#1f88be"
+                    color="#3c879e"
                     style={{ fontSize: "1.1em" }}
                   />
                   <span>ÖMÜRBABA@healtrip.com</span>

@@ -4,7 +4,7 @@
   font-size: 2rem;
   text-align: center;
   margin-bottom: auto;
-  color: #1f88be;
+  color: #3c879e;
 }
 
 .contact-mid h2 {
@@ -12,7 +12,7 @@
   font-weight: 600;
   font-size: 2rem;
   text-align: left;
-  color: #1f88be;
+  color: #3c879e;
 }
 
 .contact-mid {
@@ -22,7 +22,7 @@
 }
 
 .location span{
-  color: #1f88be;
+  color: #3c879e;
   margin-left: 2%;
   font-size: medium;
 }
@@ -32,13 +32,13 @@
 }
 
 .phone span{
-  color: #1f88be;
+  color: #3c879e;
   margin-left: 2%;
   font-size: medium;
 }
 
 .mail span{
-  color: #1f88be;
+  color: #3c879e;
   margin-left: 2%;
   font-size: medium;
 }
@@ -49,4 +49,16 @@
   align-items: center;
   margin-top: 1%;
   margin-bottom: 1%;
+}
+
+.sendButton{
+  background-color: #3c879e !important;
+  color: #fff !important;
+}
+
+.sendButton:hover{
+  background-color: #fff !important;
+  color: #3c879e !important;
+  box-shadow: 0 0 2px 2px #3c879e !important;
+
 }
