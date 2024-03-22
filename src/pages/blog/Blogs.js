@@ -13,16 +13,6 @@ export default function Blogs() {
   return (
     <div style={{ marginTop: "2%" }}>
       <Container style={{ padding: "30px 0" }}>
-        <h1
-          style={{
-            textAlign: "center",
-            color: "#3c879e",
-            fontWeight: "1000",
-            fontSize: "2.5rem",
-            marginBottom: "0",
-            fontFamily: "Oswald , sans-serif",
-          }}
-        ></h1>
         <Row>
           <Col md={4}>
           <Link to="/blogs/what-nose-fillers-can-do-for-your-nose" className="blog-link">
