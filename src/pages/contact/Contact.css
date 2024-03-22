@@ -4,7 +4,7 @@
   font-size: 2rem;
   text-align: center;
   margin-bottom: auto;
-  color: #3c879e;
+  color: #1f88be;
 }
 
 .contact-mid h2 {
@@ -12,7 +12,7 @@
   font-weight: 600;
   font-size: 2rem;
   text-align: center;
-  color: white;
+  color: #1f88be;
 }
 
 .contact-mid {
@@ -22,7 +22,7 @@
 }
 
 .location span{
-  color: white;
+  color: #1f88be;
   margin-left: 2%;
   font-size: medium;
 }
@@ -32,13 +32,21 @@
 }
 
 .phone span{
-  color: white;
+  color: #1f88be;
   margin-left: 2%;
   font-size: medium;
 }
 
 .mail span{
-  color: white;
+  color: #1f88be;
   margin-left: 2%;
   font-size: medium;
+}
+
+.gmap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
