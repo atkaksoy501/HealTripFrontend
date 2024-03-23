@@ -35,7 +35,6 @@ export default function Contact() {
           textAlign: "center",
         }}
       >
-        <Image style={{opacity:"0.70"}} src={photo1} fluid />
         <div
           style={{
             position: "absolute",
@@ -47,8 +46,9 @@ export default function Contact() {
             borderRadius: "5px",
           }}
         >
-          <h1 style={{ color: "#295d6d", fontSize:"4rem", fontWeight:"600" }}>Contact Us</h1>
+          <h1 style={{ color: "#295d6d", fontSize: "4rem", fontWeight: "600" }}>CONTACT US</h1>
         </div>
+        <Image style={{ opacity: "0.4", minHeight: "300px" }} src={photo1} fluid />
       </div>
       <div
         class="contact-mid"
