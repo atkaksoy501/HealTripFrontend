@@ -27,7 +27,7 @@ export const PopupLogin = (props) => {
     <Grid className="popup-login">
       <Paper elevation={10} style={paperStyle}>
         <Grid align="end">
-          <button className="close-btn" onClick={() => props.setTrigger(false)}><CloseIcon/></button>
+          <button className="close-btn" onClick={() => props.setTrigger(false)}><CloseIcon style={{color:"#265867"}}/></button>
         </Grid>
 
         <Grid align="center">
@@ -38,8 +38,8 @@ export const PopupLogin = (props) => {
         </Grid>
         <div style={{ marginTop: "10px" }}>
           <TextField
-            label="Username"
-            placeholder="Enter username"
+            label="Email"
+            placeholder="Enter email"
             fullWidth
             required
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
