@@ -25,12 +25,11 @@ export const BlogSectionInHome = () => {
       </h1>
       <Row>
       <Link to="/blogs" className="blog-link"><h2 style={{textAlign:"right", padding:"10px 0"}}>View All Blogs <ArrowForwardIcon /></h2></Link>
-        <Col md={4} style={{padding:"15px 30px"}}>
-          
+        <Col md={4} style={{padding:"15px 40px"}}>
           <Link to="/cosmetic-dentistry" className="blog-link">
-            <img src={photo1} alt="Burak" className="img-fluid" />
+            <img src={photo1} alt="Burak" className="img-fluid" style={{padding:"0 5px"}}/>
             <h2 className="content_header">
-              What nose fillers can do for your nose?
+              What Nose Fillers Can Do For Your Nose?
             </h2>
             <p className="content_text">
               What nose fillers can do for your nose? Nose filler What nose
@@ -40,12 +39,10 @@ export const BlogSectionInHome = () => {
             </p>
           </Link>
         </Col>
-        <Col md={4}  style={{padding:"15px 30px"}}>
+        <Col md={4}  style={{padding:"15px 40px"}}>
           <Link to="/oral-surgery" className="blog-link">
-            {" "}
-            {}
-            <img src={photo2} alt="Burak" className="img-fluid" />
-            <h2 className="content_header">Hair Loss in Women</h2>
+            <img src={photo2} alt="Burak" className="img-fluid" style={{padding:"0 5px"}}/>
+            <h2 className="content_header">Understanding with Hair Loss in Women</h2>
             <p className="content_text">
               Hair loss is a common problem that affects millions of women
               around the world. It can cause emotional distress and have a
@@ -53,9 +50,9 @@ export const BlogSectionInHome = () => {
             </p>
           </Link>
         </Col>
-        <Col md={4}  style={{padding:"15px 30px"}}>
+        <Col md={4}  style={{padding:"15px 40px"}}>
           <Link to="/general-dentistry" className="blog-link">
-            <img src={photo3} alt="Burak" className="img-fluid" />
+            <img src={photo3} alt="Burak" className="img-fluid" style={{padding:"0 5px"}} />
             <h2 className="content_header">
               How To Maintain Good Oral Hygiene?
             </h2>

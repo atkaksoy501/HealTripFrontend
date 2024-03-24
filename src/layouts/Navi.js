@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 export const Navi = ({ direction, ...args }) => {
   const isMobile = useMediaQuery("(max-width:920px)");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
