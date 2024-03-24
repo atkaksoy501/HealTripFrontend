@@ -1,19 +1,22 @@
 import {React, useState} from "react";
 import { Button, Menu } from "semantic-ui-react";
 import { PopupLogin } from "../layouts/PopupLogin";
+import { Signup } from "./Signup";
 
 export default function SignedOut({signIn}) {
-  const [buttonPopup , setButtonPopup] = useState(false);
+  const [buttonLoginPopup , setButtonLoginPopup] = useState(false);
+  const [buttonSignupPopup , setButtonSignupPopup] = useState(false);
   return (
     <div>
       <Menu.Item>
-        <Button onClick={() => setButtonPopup(true)} color="olive">
+        <Button onClick={() => setButtonLoginPopup(true)} color="olive">
           Login
         </Button>
-        <Button color="olive">Sign Up</Button>
+        <Button onClick={() => setButtonSignupPopup(true)} color="olive">Sign Up</Button>
       </Menu.Item>
-      <PopupLogin trigger={buttonPopup} setTrigger={setButtonPopup}>
+      <PopupLogin trigger={buttonLoginPopup} setTrigger={setButtonLoginPopup}>
       </PopupLogin>
+      <Signup trigger={buttonSignupPopup} setTrigger={setButtonSignupPopup}></Signup>
     </div>
   );
 }
