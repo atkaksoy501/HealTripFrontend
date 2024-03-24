@@ -7,6 +7,7 @@ import {
   Avatar,
   TextField,
   Button,
+  Typography
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
@@ -14,14 +15,14 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 export const Signup = (props) => {
   const paperStyle = {
     padding: 20,
-    height: "70vh",
+    height: "75vh",
     width: 400,
     margin: "20px auto",
   };
   const avatarStyle = { backgroundColor: "#265867" };
   const btnstyle = { margin: "8px 0", backgroundColor: "#265867" };
   return props.trigger ? (
-    <Grid className="popup-signup">
+    <Grid className="popup-signup" >
       <Paper elevation={10} style={paperStyle}>
         <Grid align="end">
           <button className="close-btn" onClick={() => props.setTrigger(false)}><CloseIcon style={{color:"#265867"}}/></button>
@@ -61,7 +62,7 @@ export const Signup = (props) => {
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
-        <div style={{ marginTop: "10px", marginBottom:"30px"}}>
+        <div style={{ marginTop: "10px", marginBottom:"25px"}}>
           <TextField
             label="Password"
             placeholder="Enter password"
@@ -71,6 +72,7 @@ export const Signup = (props) => {
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
+        
         <Button
           type="submit"
           color="primary"
@@ -80,6 +82,10 @@ export const Signup = (props) => {
         >
           Sign Up
         </Button>
+
+        <Typography style={{marginTop:"10px"}}>
+        By creating an account, you agree to our Privacy policy and Terms of use.
+        </Typography>
       </Paper>
     </Grid>
   ) : (

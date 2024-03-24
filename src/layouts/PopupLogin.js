@@ -47,7 +47,7 @@ export const PopupLogin = (props) => {
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
-        <div style={{ marginTop: "20px" }}>
+        <div style={{ marginTop: "10px" }}>
           <TextField
             label="Password"
             placeholder="Enter password"
