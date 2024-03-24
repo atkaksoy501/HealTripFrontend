@@ -9,7 +9,7 @@ export const WhyHealTripSection = () => {
   return (
     <Container style={{ padding: "30px 0", textAlign:"center" }}>
       <Row>
-        <Col md={4}>
+        <Col md={4} style={{ padding: "15px 15px" }}>
           <img src={photo1} alt="Burak" className="img-fluid" style={{width:"100px", height:"100px"}}/>
           <h2 className="content_header" style={{color:"#3c879e"}}>Detailed Consultation</h2>
           <p className="content_text" style={{color:"#3c879e"}}>
@@ -17,7 +17,7 @@ export const WhyHealTripSection = () => {
             aspect of the procedure with patient.
           </p>
         </Col>
-        <Col md={4}>
+        <Col md={4} style={{ padding: "15px 15px" }}>
           <img src={photo2} alt="Burak" className="img-fluid" style={{width:"100px", height:"100px"}} />
           <h2 className="content_header" style={{color:"#3c879e"}}>Total Care</h2>
           <p className="content_text" style={{color:"#3c879e"}}> 
@@ -25,7 +25,7 @@ export const WhyHealTripSection = () => {
             step of the way, including transfers.
           </p>
         </Col>
-        <Col md={4}>
+        <Col md={4} style={{ padding: "15px 15px" }}>
           <img src={photo3} alt="Burak" className="img-fluid" style={{width:"100px", height:"100px"}}/>
           <h2 className="content_header" style={{color:"#3c879e"}}>Best Result</h2>
           <p className="content_text" style={{color:"#3c879e"}}>

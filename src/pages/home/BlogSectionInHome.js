@@ -24,8 +24,8 @@ export const BlogSectionInHome = () => {
         HEALTRIP BLOG
       </h1>
       <Row>
-      <Link to="/blogs" className="blog-link"><h2 style={{textAlign:"right", paddingBottom:"10px"}}>View All Blogs <ArrowForwardIcon /></h2></Link>
-        <Col md={4} style={{padding:"15px"}}>
+      <Link to="/blogs" className="blog-link"><h2 style={{textAlign:"right", padding:"10px 0"}}>View All Blogs <ArrowForwardIcon /></h2></Link>
+        <Col md={4} style={{padding:"15px 30px"}}>
           
           <Link to="/cosmetic-dentistry" className="blog-link">
             <img src={photo1} alt="Burak" className="img-fluid" />
@@ -40,7 +40,7 @@ export const BlogSectionInHome = () => {
             </p>
           </Link>
         </Col>
-        <Col md={4}  style={{padding:"15px"}}>
+        <Col md={4}  style={{padding:"15px 30px"}}>
           <Link to="/oral-surgery" className="blog-link">
             {" "}
             {}
@@ -53,7 +53,7 @@ export const BlogSectionInHome = () => {
             </p>
           </Link>
         </Col>
-        <Col md={4}  style={{padding:"15px"}}>
+        <Col md={4}  style={{padding:"15px 30px"}}>
           <Link to="/general-dentistry" className="blog-link">
             <img src={photo3} alt="Burak" className="img-fluid" />
             <h2 className="content_header">
