@@ -2,6 +2,6 @@ import axios from "axios";
 
 export default class DepartmentService{
     getDepartments(){
-        return axios.get("http://localhost:8080/department/getAll")
+        return axios.get("https://healtrip.azurewebsites.net/department/getAll")
     }
 }
