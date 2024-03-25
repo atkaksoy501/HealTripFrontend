@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Collapse, Navbar, Nav, NavItem, NavLink} from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
@@ -23,12 +23,19 @@ export const Navi = ({ direction, ...args }) => {
     setMenuOpen(!menuOpen);
   };
 
-  function handleSignOut(params) {
+  useEffect(() => {
+    handleSignIn();
+  }, [isAuthenticated]); // isAuthenticated bağımlılığı eklendi
+
+  function handleSignOut() {
     setIsAuthenticated(false);
+    localStorage.removeItem('token');
   }
 
-  function handleSignIn(params) {
-    setIsAuthenticated(true);
+  function handleSignIn() {
+    if (localStorage.getItem('token')) {
+      setIsAuthenticated(true);
+    }
   }
 
   return (
