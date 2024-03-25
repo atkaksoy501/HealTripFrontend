@@ -1,7 +1,6 @@
 import {React, useState} from "react";
 import { Button, Menu } from "semantic-ui-react";
 import { PopupLogin } from "../layouts/PopupLogin";
-import { Signup } from "./Signup";
 
 export default function SignedOut({signIn}) {
   const [buttonLoginPopup , setButtonLoginPopup] = useState(false);

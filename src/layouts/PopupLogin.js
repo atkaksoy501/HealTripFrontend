@@ -14,6 +14,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Signup } from "./Signup";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const PopupLogin = (props) => {
   const paperStyle = {
@@ -25,8 +27,37 @@ export const PopupLogin = (props) => {
   const avatarStyle = { backgroundColor: "#265867" };
   const btnstyle = { margin: "8px 0", backgroundColor: "#265867" };
   const [buttonSignupPopup , setButtonSignupPopup] = useState(false);
+
+  const navigate = useNavigate();
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+
+  const handleClosePopup = () => {
+    props.setTrigger(false);
+  };
+
+  const handleRegister = async(e) =>{
+    e.preventDefault()
+  
+    const payload = {
+      email: email,
+      password: password
+    }
+
+    try {
+      const responseToken = await axios.post('http://localhost:8080/auth/authenticate', payload);
+      localStorage.setItem("token", responseToken?.data)
+      navigate("/");
+      handleClosePopup()
+    } catch (error) {
+      console.error('Signup error:', error);
+    }
+  }
+
+
   return props.trigger ? (
     <Grid className="popup-login">
+      <form onSubmit={(e) => handleRegister(e)}>
       <Paper elevation={10} style={paperStyle}>
         <Grid align="end">
           <button className="close-btn" onClick={() => props.setTrigger(false)}><CloseIcon style={{color:"#265867"}}/></button>
@@ -44,6 +75,8 @@ export const PopupLogin = (props) => {
             placeholder="Enter email"
             fullWidth
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
@@ -54,6 +87,8 @@ export const PopupLogin = (props) => {
             type="password"
             fullWidth
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
@@ -84,6 +119,7 @@ export const PopupLogin = (props) => {
           </button>
         </Typography>
       </Paper>
+      </form>
       <Signup trigger={buttonSignupPopup} setTrigger={setButtonSignupPopup}></Signup>
     </Grid>
   ) : (

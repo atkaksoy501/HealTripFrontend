@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState} from "react";
 import "./Signup.css";
 import CloseIcon from "@mui/icons-material/Close";
 import {
@@ -50,11 +50,9 @@ export const Signup = (props) => {
       handleClear();
       handleClosePopup()
       setShowLogin(true);
-      navigate("/about-us"); // Move to the next page
+      navigate(""); 
     } catch (error) {
       console.error('Signup error:', error);
-      // Hata durumunda kullanıcıya geri bildirim verilebilir
-      // setError('Failed to signup. Please try again.');
     }
   };
 
