@@ -18,7 +18,7 @@ import { Signup } from "./Signup";
 export const PopupLogin = (props) => {
   const paperStyle = {
     padding: 20,
-    height: "70vh",
+    height: "75vh",
     width: 400,
     margin: "20px auto",
   };

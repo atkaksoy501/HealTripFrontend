@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import "./Signup.css";
 import CloseIcon from "@mui/icons-material/Close";
 import {
@@ -10,6 +10,9 @@ import {
   Typography
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { PopupLogin } from "./PopupLogin";
 
 
 export const Signup = (props) => {
@@ -21,11 +24,53 @@ export const Signup = (props) => {
   };
   const avatarStyle = { backgroundColor: "#265867" };
   const btnstyle = { margin: "8px 0", backgroundColor: "#265867" };
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const [showLogin, setShowLogin] = useState(false);
+
+  const handleClosePopup = () => {
+    props.setTrigger(false);
+  };
+  
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    const payload = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      password: password,
+      roles: "patient",
+      phone_number: "+905413712874"
+    };
+    try {
+      await axios.post('http://localhost:8080/auth/register', payload);
+      handleClear();
+      handleClosePopup()
+      setShowLogin(true);
+      navigate("/about-us"); // Move to the next page
+    } catch (error) {
+      console.error('Signup error:', error);
+      // Hata durumunda kullanıcıya geri bildirim verilebilir
+      // setError('Failed to signup. Please try again.');
+    }
+  };
+
+  const handleClear = () => {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPassword('');
+  };
+
   return props.trigger ? (
-    <Grid className="popup-signup" >
+    <Grid className="popup-signup">
+      <form onSubmit={(e) => handleRegister(e)}>
       <Paper elevation={10} style={paperStyle}>
         <Grid align="end">
-          <button className="close-btn" onClick={() => props.setTrigger(false)}><CloseIcon style={{color:"#265867"}}/></button>
+          <button className="close-btn" onClick={handleClosePopup}><CloseIcon style={{color:"#265867"}}/></button>
         </Grid>
 
         <Grid align="center">
@@ -40,6 +85,8 @@ export const Signup = (props) => {
             placeholder="Enter Your Name"
             fullWidth
             required
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
           
@@ -50,6 +97,8 @@ export const Signup = (props) => {
             placeholder="Enter Your Last Name"
             fullWidth
             required
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
@@ -59,6 +108,8 @@ export const Signup = (props) => {
             placeholder="Enter email"
             fullWidth
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
@@ -69,6 +120,8 @@ export const Signup = (props) => {
             type="password"
             fullWidth
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
@@ -87,6 +140,8 @@ export const Signup = (props) => {
         By creating an account, you agree to our Privacy policy and Terms of use.
         </Typography>
       </Paper>
+      </form>
+      {showLogin && <PopupLogin trigger={showLogin} setTrigger={setShowLogin} />}
     </Grid>
   ) : (
     ""
