@@ -21,7 +21,7 @@ export default function Treatments({ departmentId, departmentName }) {
     <div style={{ marginTop: "1%" }}>
       <div
         className="title"
-        style={{ marginBottom: "1%", textAlign: "center" }}
+        style={{textAlign: "center" }}
       >
         <h2>{departmentName}</h2>
       </div>

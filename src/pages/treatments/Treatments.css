@@ -1,16 +1,18 @@
 .title h2{
-    color: #3c879e;
+    color: #295d6d;
 }
 
 .custom-card-content{
-    background-color: #3c879e !important;
+    background-color: #fff !important;
 }
 
 .custom-card-header{
-    color: white !important;
+    color: #295d6d !important;
+    font-size: 1.1rem !important;
 }
 
 .custom-card-desc{
-    color: white !important;
+    color: #295d6d !important;
+    font-size: 1.1rem !important;
 }
 
