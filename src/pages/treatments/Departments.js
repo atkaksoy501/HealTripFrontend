@@ -1,23 +1,25 @@
-import React, { useState, useEffect} from 'react'
-import { Menu, MenuItem } from 'semantic-ui-react'
-import DepartmentService from '../../services/departmentService';
+import React, { useState, useEffect } from "react";
+import { ButtonGroup, Button, Divider } from "semantic-ui-react";
+import DepartmentService from "../../services/departmentService";
+import "./Departments.css";
 
-export default function Departments() {
-
+export default function Departments({ onDepartmentClick }) {
   const [departments, setDepartments] = useState([]);
 
-  useEffect(()=>{
-    let departmentService = new DepartmentService()
-    departmentService.getDepartments().then(result=>setDepartments(result.data))
-  },[])
+  useEffect(() => {
+    let departmentService = new DepartmentService();
+    departmentService
+      .getDepartments()
+      .then((result) => setDepartments(result.data));
+  }, []);
 
   return (
-    <div>
-      <Menu fluid widths={departments.length}>
+    <div style={{marginTop:"6%"}}>
+      <ButtonGroup widths={departments.length}>
         {departments.map((department) => (
-          <MenuItem  key={department.id} name={department.departmentName}/>
-        ))}  
-      </Menu>
+          <Button className="custom-button" onClick={() => onDepartmentClick(department.id, department.departmentName)} key={department.id}>{department.departmentName}</Button>
+        ))}
+      </ButtonGroup>
     </div>
-  )
+  );
 }
