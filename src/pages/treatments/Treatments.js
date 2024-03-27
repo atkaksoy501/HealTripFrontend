@@ -11,7 +11,7 @@ export default function Treatments({ departmentId, departmentName }) {
   useEffect(() => {
     console.log("Department ID:", departmentId);
     if (departmentId) {
-      axios.get(`http://localhost:8080/retreat/getByDepartmentId/${departmentId}`)
+      axios.get(`https://healtrip.azurewebsites.net/retreat/getByDepartmentId/${departmentId}`)
         .then(response => setTreatments(response.data))
         .catch(error => console.error('Error fetching treatments:', error));
     }
