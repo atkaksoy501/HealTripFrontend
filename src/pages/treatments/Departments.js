@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ButtonGroup, Button, Divider } from "semantic-ui-react";
+import { ButtonGroup, Button } from "semantic-ui-react";
 import DepartmentService from "../../services/departmentService";
 import "./Departments.css";
 
