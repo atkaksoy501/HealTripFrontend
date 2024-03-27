@@ -10,6 +10,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Set CI environment variable
+      run: echo "CI=false" >> $GITHUB_ENV
+      
     - name: Checkout code
       uses: actions/checkout@v2
 
