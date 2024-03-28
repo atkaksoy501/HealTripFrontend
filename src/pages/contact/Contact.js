@@ -114,7 +114,7 @@ export default function Contact() {
                     color="#3c879e"
                     style={{ fontSize: "1.1em" }}
                   />
-                  <span>ÖMÜRBABA@healtrip.com</span>
+                  <span>codewizards@healtrip.com</span>
                 </div>
               </Col>
             </Row>
