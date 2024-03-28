@@ -55,8 +55,8 @@ export default function Contact() {
         style={{
           marginLeft: "16%",
           marginRight: "16%",
-          marginTop: "1%",
-          marginBottom: "1%",
+          marginTop: "4%",
+          marginBottom: "4%",
           backgroundColor: "#f9f9f9",
         }}
       >
@@ -128,7 +128,7 @@ export default function Contact() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3184.2356482233486!2d30.618362076305235!3d37.051867253471976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c39abd6e49aa8d%3A0x329b9c7bc561e87a!2sAntalya%20Bilim%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1711130859737!5m2!1str!2str"
             width="600"
             height="450"
-            style={{ border: "0", width:"100%"}}
+            style={{ border: "0", width:"100%", marginBottom:"30px"}}
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
