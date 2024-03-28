@@ -1,18 +1,26 @@
-.title h2{
-    color: #295d6d;
+.title h2 {
+  color: #295d6d;
 }
 
-.custom-card-content{
-    background-color: #fff !important;
+.custom-card-content {
+  background-color: #fff !important;
 }
 
-.custom-card-header{
-    color: #295d6d !important;
-    font-size: 1.1rem !important;
+.custom-card-header {
+  color: #295d6d !important;
+  font-size: 1.1rem !important;
 }
 
-.custom-card-desc{
-    color: #295d6d !important;
-    font-size: 1.1rem !important;
+.custom-card-desc {
+  color: #295d6d !important;
+  font-size: 1.1rem !important;
+}
+
+.link-image {
+  transition: transform 0.5s ease;
+}
+
+.link-image:hover {
+  transform: scale(1.05);
 }
 

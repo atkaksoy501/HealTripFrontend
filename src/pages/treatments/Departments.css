@@ -2,5 +2,36 @@
     background-color: #295d6d !important;
     color:#fff !important;
     font-size: 1.1rem !important;
+    font-weight: bold;
 }
 
+.custom-button:hover {
+  background-color: #fff !important;
+  color: #295d6d !important;
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .button-container {
+      padding-left: 10%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .button-container {
+      padding-left: 22%;
+    }
+  }
+  
+  @media (max-width: 361px) {
+    .button-container {
+      padding-left: 30%;
+    }
+  }
+  
+  @media (max-width: 280px) {
+    .button-container {
+      padding-left: 50%;
+    }
+  }
+  

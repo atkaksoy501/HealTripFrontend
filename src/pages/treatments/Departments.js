@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ButtonGroup, Button } from "semantic-ui-react";
+import { ButtonGroup, Button } from "reactstrap";
 import DepartmentService from "../../services/departmentService";
 import "./Departments.css";
 
@@ -14,8 +14,8 @@ export default function Departments({ onDepartmentClick }) {
   }, []);
 
   return (
-    <div style={{marginTop:"6%"}}>
-      <ButtonGroup widths={departments.length}>
+    <div>
+      <ButtonGroup className="button-container" style={{width:"100%", display:"flex", justifyContent:"center", textAlign:"center"}}>
         {departments.map((department) => (
           <Button className="custom-button" onClick={() => onDepartmentClick(department.id, department.departmentName)} key={department.id}>{department.departmentName}</Button>
         ))}

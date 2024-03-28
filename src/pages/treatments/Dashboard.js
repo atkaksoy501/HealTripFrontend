@@ -16,7 +16,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{marginTop:"59px"}}>
+    <div style={{marginTop:"80px"}}>
       <Container className="main">
         <Departments onDepartmentClick={handleDepartmentClick} />
         <Treatments departmentId={selectedDepartmentId} departmentName={selectedDepartmentName} />
