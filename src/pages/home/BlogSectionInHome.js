@@ -26,7 +26,7 @@ export const BlogSectionInHome = () => {
       <Row>
       <Link to="/blogs" className="blog-link"><h2 style={{textAlign:"right", padding:"10px 0"}}>View All Blogs <ArrowForwardIcon /></h2></Link>
         <Col md={4} style={{padding:"15px 40px"}}>
-          <Link to="/cosmetic-dentistry" className="blog-link">
+          <Link to="/blogs" className="blog-link">
             <img src={photo1} alt="Burak" className="img-fluid" style={{padding:"0 5px"}}/>
             <h2 className="content_header">
               What Nose Fillers Can Do For Your Nose?
@@ -40,7 +40,7 @@ export const BlogSectionInHome = () => {
           </Link>
         </Col>
         <Col md={4}  style={{padding:"15px 40px"}}>
-          <Link to="/oral-surgery" className="blog-link">
+          <Link to="/blogs" className="blog-link">
             <img src={photo2} alt="Burak" className="img-fluid" style={{padding:"0 5px"}}/>
             <h2 className="content_header">Understanding with Hair Loss in Women</h2>
             <p className="content_text">
@@ -51,7 +51,7 @@ export const BlogSectionInHome = () => {
           </Link>
         </Col>
         <Col md={4}  style={{padding:"15px 40px"}}>
-          <Link to="/general-dentistry" className="blog-link">
+          <Link to="/blogs" className="blog-link">
             <img src={photo3} alt="Burak" className="img-fluid" style={{padding:"0 5px"}} />
             <h2 className="content_header">
               How To Maintain Good Oral Hygiene?
