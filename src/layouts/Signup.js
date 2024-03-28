@@ -18,13 +18,14 @@ import { PopupLogin } from "./PopupLogin";
 export const Signup = (props) => {
   const paperStyle = {
     padding: 20,
-    height: "556px",
+    height: "570px",
     width: 400,
     margin: "20px auto",
   };
   const avatarStyle = { backgroundColor: "#265867" };
   const btnstyle = { margin: "8px 0", backgroundColor: "#265867" };
   const [firstName, setFirstName] = useState('');
+  const [phoneNumber, setPhoneNumber ] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -53,7 +54,7 @@ export const Signup = (props) => {
       email: email,
       password: password,
       roles: "patient",
-      phone_number: "+905413712874"
+      phone_number: phoneNumber
     };
     try {
       await axios.post('https://healtrip.azurewebsites.net/auth/register', payload);
@@ -72,6 +73,7 @@ export const Signup = (props) => {
     setEmail('');
     setPassword('');
     setEmailError('');
+    setPhoneNumber('')
   };
 
   return props.trigger ? (
@@ -108,6 +110,18 @@ export const Signup = (props) => {
             required
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
+            inputProps={{ style: { fontSize: 14, width: "90%" } }}
+          />
+        </div>
+        
+        <div style={{ marginTop: "10px" }}>
+        <TextField
+            label="Phone Number"
+            placeholder="Enter Your Phone Number"
+            fullWidth
+            required
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>

@@ -20,7 +20,7 @@ import axios from "axios";
 export const PopupLogin = (props) => {
   const paperStyle = {
     padding: 20,
-    height: "556px",
+    height: "500px",
     width: 400,
     margin: "20px auto",
   };
