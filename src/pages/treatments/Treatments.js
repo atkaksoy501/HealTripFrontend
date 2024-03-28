@@ -40,7 +40,7 @@ export default function Treatments({ departmentId, departmentName }) {
                 md={4}
                 key={treatment.id}
                 style={{
-                  padding: "1%",
+                  padding: "1.5%",
                   display: "flex",
                   justifyContent: "center",
                 }}
