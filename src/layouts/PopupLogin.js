@@ -20,7 +20,7 @@ import axios from "axios";
 export const PopupLogin = (props) => {
   const paperStyle = {
     padding: 20,
-    height: "75vh",
+    height: "556px",
     width: 400,
     margin: "20px auto",
   };
@@ -31,13 +31,23 @@ export const PopupLogin = (props) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const [emailError, setEmailError] = useState('');
 
   const handleClosePopup = () => {
     props.setTrigger(false);
   };
 
+  const isEmailValid = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  }
+
   const handleRegister = async(e) =>{
     e.preventDefault()
+    if (!isEmailValid(email)) {
+      setEmailError('Please enter a valid email address.');
+      return;
+    }
   
     const payload = {
       email: email,
@@ -46,6 +56,7 @@ export const PopupLogin = (props) => {
 
     try {
       const responseToken = await axios.post('https://healtrip.azurewebsites.net/auth/authenticate', payload);
+      setEmailError();
       localStorage.setItem("token", responseToken?.data)
       navigate("/");
       handleClosePopup()
@@ -78,6 +89,8 @@ export const PopupLogin = (props) => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            error={!!emailError}
+            helperText={emailError}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>

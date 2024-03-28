@@ -18,7 +18,7 @@ import { PopupLogin } from "./PopupLogin";
 export const Signup = (props) => {
   const paperStyle = {
     padding: 20,
-    height: "75vh",
+    height: "556px",
     width: 400,
     margin: "20px auto",
   };
@@ -30,13 +30,23 @@ export const Signup = (props) => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
+  const [emailError, setEmailError] = useState('');
 
   const handleClosePopup = () => {
     props.setTrigger(false);
   };
+
+  const isEmailValid = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  }
   
   const handleRegister = async (e) => {
     e.preventDefault();
+    if (!isEmailValid(email)) {
+      setEmailError('Please enter a valid email address.');
+      return;
+    }
     const payload = {
       first_name: firstName,
       last_name: lastName,
@@ -61,6 +71,7 @@ export const Signup = (props) => {
     setLastName('');
     setEmail('');
     setPassword('');
+    setEmailError('');
   };
 
   return props.trigger ? (
@@ -108,6 +119,8 @@ export const Signup = (props) => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            error={!!emailError}
+            helperText={emailError}
             inputProps={{ style: { fontSize: 14, width: "90%" } }}
           />
         </div>
