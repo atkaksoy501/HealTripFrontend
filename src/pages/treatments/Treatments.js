@@ -12,6 +12,7 @@ import ImageComponentFromBase64 from "./ImageComponentFromBase64";
 import "./Treatments.css";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
+import { Link } from "react-router-dom";
 
 export default function Treatments({ departmentId, departmentName }) {
   const [treatments, setTreatments] = useState([]);
@@ -38,7 +39,7 @@ export default function Treatments({ departmentId, departmentName }) {
 
   return (
     <div style={{ marginTop: "1%" }}>
-      <div style={{ textAlign: "center", paddingTop:"30px"}}>
+      <div style={{ textAlign: "center", paddingTop: "30px"}}>
         <ClipLoader
           color={"#295d6d"}
           loading={loading}
@@ -65,10 +66,11 @@ export default function Treatments({ departmentId, departmentName }) {
                       justifyContent: "center",
                     }}
                   >
-                    <a
-                      href={`/treatments/${encodeURIComponent(
-                        treatment.retreat_name
-                      )}`}
+                    <Link
+                      to={{
+                        pathname: `/treatments/${treatment.retreat_name}`,
+                        state: { treatment },
+                      }}
                     >
                       <div className="link-image">
                         <Card
@@ -90,7 +92,7 @@ export default function Treatments({ departmentId, departmentName }) {
                           </CardBody>
                         </Card>
                       </div>
-                    </a>
+                    </Link>
                   </Col>
                 ))}
               </Row>
