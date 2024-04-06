@@ -11,7 +11,7 @@ export default function AboutUs() {
     <section id="about" className="about" style={{marginTop:"59px"}}>
       <div className="section-title" style={{backgroundImage: `url(${about_background})`}}>
         <h1 style={{textAlign: "center", color: "#295D6D", fontSize: "4.5rem", fontWeight: "bold", fontFamily: "'Oswald', sans-serif"}}>ABOUT US</h1>
-          <p style={{textAlign:"center", color:"#295D6D", fontSize:"1.1rem",fontWeight:"700", padding:"0 100px"}}>Welcome to HealTrip,  where your health is our top priority. At HealTrip, we are dedicated to delivering exceptional  healthcare in a welcoming and modern environment. Your journey to a healthier begins here.</p>
+          <p style={{textAlign:"center", color:"#295D6D", fontSize:"1.1rem",fontWeight:"700"}}>Welcome to HealTrip,  where your health is our top priority. Your journey to a healthier begins here.</p>
         </div>
       <Container data-aos="fade-up">
         <Row style={{padding:"30px 0"}}>
