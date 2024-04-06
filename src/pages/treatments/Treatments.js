@@ -50,7 +50,7 @@ export default function Treatments({ departmentId, departmentName }) {
       </div>
       {!loading && (
         <div>
-          <div className="title" style={{ textAlign: "center" }}>
+          <div className="title" style={{ textAlign: "center", paddingBottom:"15px" }}>
             <h2>{departmentName}</h2>
           </div>
           <div>
