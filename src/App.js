@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route exact path="/" Component={Home} />
         <Route exact path="/treatments" Component={Dashboard} />
-        <Route exact path="/treatments/:retreat_name" Component={TreatmentDetail} />
+        <Route exact path="/treatments/:retreat_id" Component={TreatmentDetail} />
         <Route path="/about-us" Component={AboutUs} />
         <Route path="/guidance" Component={Guidance} />
         <Route path="/blogs" Component={Blogs} />

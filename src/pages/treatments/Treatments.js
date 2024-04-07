@@ -39,7 +39,7 @@ export default function Treatments({ departmentId, departmentName }) {
 
   return (
     <div style={{ marginTop: "1%" }}>
-      <div style={{ textAlign: "center", paddingTop: "30px"}}>
+      <div style={{ textAlign: "center", paddingTop: "30px" }}>
         <ClipLoader
           color={"#295d6d"}
           loading={loading}
@@ -50,7 +50,10 @@ export default function Treatments({ departmentId, departmentName }) {
       </div>
       {!loading && (
         <div>
-          <div className="title" style={{ textAlign: "center", paddingBottom:"15px" }}>
+          <div
+            className="title"
+            style={{ textAlign: "center", paddingBottom: "15px" }}
+          >
             <h2>{departmentName}</h2>
           </div>
           <div>
@@ -67,10 +70,10 @@ export default function Treatments({ departmentId, departmentName }) {
                     }}
                   >
                     <Link
-                      to={{
-                        pathname: `/treatments/${treatment.retreat_name}`,
-                        state: { treatment },
-                      }}
+                      to={`/treatments/${encodeURIComponent(
+                        treatment.id
+                      )}`}
+                      state={{ treatment }}
                     >
                       <div className="link-image">
                         <Card
