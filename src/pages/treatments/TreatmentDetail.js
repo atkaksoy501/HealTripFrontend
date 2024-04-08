@@ -63,6 +63,9 @@ export default function TreatmentDetail() {
               {retreatData.retreat_name +
                 " Care Unveiled: Discovering Innovative Solutions"}
             </h2>
+            <p style={{color:"#295D6D", fontSize:"1.1rem" }} className="fst-italic">
+                {retreatData.description}
+            </p>
           </Col>
         </Row>
       )}
