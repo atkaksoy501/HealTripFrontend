@@ -82,6 +82,11 @@ export default function Blogs() {
               administration of drugs to a patient to achieve unconsciousness,
               loss of sensation, and...
             </p>
+
+
+
+
+            
           </Col>
         </Row>
       </Container>
