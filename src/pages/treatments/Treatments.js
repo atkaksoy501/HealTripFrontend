@@ -86,7 +86,7 @@ export default function Treatments({ departmentId, departmentName }) {
                           />
                           <CardBody>
                             <CardTitle tag="h5" className="custom-card-header">
-                              {treatment.retreat_name + " Treatment"}
+                              {treatment.retreat_name}
                             </CardTitle>
                           </CardBody>
                         </Card>
