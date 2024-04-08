@@ -5,7 +5,6 @@ import {
   Col,
   CardBody,
   CardTitle,
-  CardText,
   Card,
 } from "reactstrap";
 import ImageComponentFromBase64 from "./ImageComponentFromBase64";
@@ -87,11 +86,8 @@ export default function Treatments({ departmentId, departmentName }) {
                           />
                           <CardBody>
                             <CardTitle tag="h5" className="custom-card-header">
-                              {treatment.retreat_name}
+                              {treatment.retreat_name + " Treatment"}
                             </CardTitle>
-                            <CardText className="custom-card-desc">
-                              {treatment.description}
-                            </CardText>
                           </CardBody>
                         </Card>
                       </div>
