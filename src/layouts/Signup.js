@@ -57,7 +57,7 @@ export const Signup = (props) => {
       phone_number: phoneNumber
     };
     try {
-      await axios.post('https://healtrip.azurewebsites.net/auth/register', payload);
+      await axios.post('https://healtrip.azurewebsites.net/auth/register/patient', payload);
       handleClear();
       handleClosePopup()
       setShowLogin(true);
