@@ -13,6 +13,7 @@ import Home from "./pages/home/Home";
 import Dashboard from "./pages/treatments/Dashboard";
 import BlogDetails1 from "./pages/blog/blogDetails/BlogDetails1"
 import TreatmentDetail from "./pages/treatments/TreatmentDetail";
+import Hospital from "./pages/treatments/Hospital";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/" Component={Home} />
         <Route exact path="/treatments" Component={Dashboard} />
         <Route exact path="/treatments/:retreat_id" Component={TreatmentDetail} />
+        <Route path="/hospitals/:hospital_id" Component={Hospital} />
         <Route path="/about-us" Component={AboutUs} />
         <Route path="/guidance" Component={Guidance} />
         <Route path="/blogs" Component={Blogs} />
