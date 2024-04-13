@@ -71,15 +71,15 @@ export default function TreatmentDetail() {
               {retreatData.description}
             </p>
           </Col>
-
+          <h1 style={{ marginTop: "30px", color: "#295D6D" }}>Hospitals</h1>
           {retreatData.department.hospitals.map((hospital) => (
             <Col
               lg={3}
+              md={6}
               key={hospital.id}
               style={{
-                padding: "3%",
+                marginTop: "10px",
                 display: "flex",
-                justifyContent: "center",
               }}
             >
               <Link
