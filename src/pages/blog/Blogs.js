@@ -29,15 +29,19 @@ export default function Blogs() {
             </Link>
           </Col>
           <Col md={4}>
+          <Link to="/blogs/hair-loss-is-a-common-problem-that-affects-millions-of-women" className="blog-link">
             <img src={photo2} alt="Sude" className="img-fluid" />
+            
             <h2 className="content_header">Hair Loss in Women</h2>
             <p className="content_text">
               Hair loss is a common problem that affects millions of women
               around the world. It can cause emotional distress and have a
               negative impact on a woman's self-esteem.
             </p>
+            </Link>
           </Col>
           <Col md={4}>
+          <Link to="/blogs/How-To-Maintain-Good-Oral-Hygiene" className="blog-link">
             <img src={photo3} alt="Sude" className="img-fluid" />
             <h2 className="content_header">
               How To Maintain Good Oral Hygiene?
@@ -47,10 +51,13 @@ export default function Blogs() {
               Oral hygiene refers to the practices that we use to keep our
               mouths clean and free from harmful bacteria.
             </p>
+            </Link>
           </Col>
+          
         </Row>
         <Row>
           <Col md={4}>
+          <Link to="/blogs/Hair-Loss-for-Men" className="blog-link">
             <img src={photo4} alt="Sude" className="img-fluid" />
             <h2 className="content_header">Hair Loss for Men</h2>
             <p className="content_text">
@@ -58,10 +65,12 @@ export default function Blogs() {
               affecting not only their physical appearance but also their
               self-esteem a...
             </p>
+            </Link> 
           </Col>
           <Col md={4}>
             {" "}
             {}
+            <Link to="/blogs/Almond-Eye-Surgery-in-Turkey" className="blog-link">
             <img src={photo5} alt="Sude" className="img-fluid" />
             <h2 className="content_header">
               Almond Eye Surgery in Turkey: Benefits, Risks, and What to Expect
@@ -71,8 +80,10 @@ export default function Blogs() {
               that can significantly enhance the shape and appearance of the
               eyes. Whether...
             </p>
+            </Link> 
           </Col>
           <Col md={4}>
+          <Link to="/blogs/Everything-You-Need-to-Know-About-General-Anaesthesia" className="blog-link">
             <img src={photo6} alt="Sude" className="img-fluid" />
             <h2 className="content_header">
               Everything You Need To Know About General Anaesthesia
@@ -82,6 +93,7 @@ export default function Blogs() {
               administration of drugs to a patient to achieve unconsciousness,
               loss of sensation, and...
             </p>
+            </Link> 
           </Col>
         </Row>
       </Container>
