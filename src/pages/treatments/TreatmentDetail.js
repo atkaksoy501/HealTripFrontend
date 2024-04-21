@@ -94,17 +94,17 @@ export default function TreatmentDetail() {
                     }}
                   >
                     {console.log(hospital)}
-                    {hospital.hospital.hospitalImages &&
-                      hospital.hospital.hospitalImages.length > 0 && (
+                    {hospital.hospitalImages &&
+                      hospital.hospitalImages.length > 0 && (
                         <ImageComponentFromBase64
                           base64String={
-                            hospital.hospital.hospitalImages[0].image
+                            hospital.hospitalImages[0].image
                           }
                         />
                       )}
                     <CardBody>
                       <CardTitle tag="h5" className="custom-card-header">
-                        {hospital.hospital.hospitalName}
+                        {hospital.hospitalName}
                       </CardTitle>
                     </CardBody>
                   </Card>
