@@ -78,7 +78,7 @@ export default function Doctor() {
               style={{ color: "#295D6D", fontSize: "1.1rem" }}
               className="fst-italic"
             >
-              {"Experience: "+ doctorData.experience_year + "+ " + "years"}
+              {`Experience: ${doctorData.experience_year}+ years`}
             </p>
           </Col>
         </Row>
