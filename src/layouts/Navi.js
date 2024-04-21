@@ -99,7 +99,7 @@ export const Navi = ({ direction, ...args }) => {
                       <NavLink className="navlink">Contact</NavLink>
                     </NavItem>
                   </Link>
-                  <Link to="/contact">
+                  <Link to="/get-medical-advice">
                     <NavItem>
                       <NavLink>
                         <Button
@@ -146,7 +146,7 @@ export const Navi = ({ direction, ...args }) => {
             <Link to="/contact">
               <Button className="navlink">Contact</Button>
             </Link>
-            <Link to="/contact">
+            <Link to="/get-medical-advice">
               <Button
                 className="medical-advice-button"
                 style={{
