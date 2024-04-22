@@ -18,6 +18,9 @@ import BlogDetails4 from "./pages/blog/blogDetails/BlogDetails4";
 import BlogDetails5 from "./pages/blog/blogDetails/BlogDetails5";
 import BlogDetails6 from "./pages/blog/blogDetails/BlogDetails6";
 import TreatmentDetail from "./pages/treatments/TreatmentDetail";
+import Hospital from "./pages/treatments/Hospital";
+import Doctor from "./pages/treatments/Doctor";
+import GetMedicalAdvice from "./layouts/GetMedicalAdvice";
 
 function App() {
   return (
@@ -27,6 +30,8 @@ function App() {
         <Route exact path="/" Component={Home} />
         <Route exact path="/treatments" Component={Dashboard} />
         <Route exact path="/treatments/:retreat_id" Component={TreatmentDetail} />
+        <Route path="/hospitals/:hospital_id" Component={Hospital} />
+        <Route path="/doctors/:doctor_id" Component={Doctor} />
         <Route path="/about-us" Component={AboutUs} />
         <Route path="/guidance" Component={Guidance} />
         <Route path="/blogs" Component={Blogs} />
@@ -37,6 +42,7 @@ function App() {
         <Route path="/blogs/Almond-Eye-Surgery-in-Turkey" Component={BlogDetails5} />
         <Route path="/blogs/Everything-You-Need-to-Know-About-General-Anaesthesia" Component={BlogDetails6} />
         <Route path="/contact" Component={Contact} />
+        <Route path="/get-medical-advice" Component={GetMedicalAdvice} />
       </Routes>
       <Footer />
     </div>

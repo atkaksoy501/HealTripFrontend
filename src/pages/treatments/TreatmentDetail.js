@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
+import { useParams, Link } from "react-router-dom";
+import { Container, Row, Col, CardBody, CardTitle, Card } from "reactstrap";
 import ClipLoader from "react-spinners/ClipLoader";
 import ImageComponentFromBase64 from "./ImageComponentFromBase64";
+import "./Treatments.css";
 
 export default function TreatmentDetail() {
   const { retreat_id } = useParams();
@@ -63,7 +64,54 @@ export default function TreatmentDetail() {
               {retreatData.retreat_name +
                 " Care Unveiled: Discovering Innovative Solutions"}
             </h2>
+            <p
+              style={{ color: "#295D6D", fontSize: "1.1rem" }}
+              className="fst-italic"
+            >
+              {retreatData.description}
+            </p>
           </Col>
+          <h1 style={{ marginTop: "30px", color: "#295D6D" }}>Hospitals</h1>
+          {retreatData.department.hospitals.map((hospital) => (
+            <Col
+              lg={3}
+              md={6}
+              key={hospital.id}
+              style={{
+                marginTop: "10px",
+                display: "flex",
+              }}
+            >
+              <Link
+                to={`/hospitals/${encodeURIComponent(hospital.id)}`}
+                state={{ hospital }}
+              >
+                <div className="link-image">
+                  <Card
+                    className="custom-card-content"
+                    style={{
+                      width: "100%",
+                    }}
+                  >
+                    {console.log(hospital)}
+                    {hospital.hospitalImages &&
+                      hospital.hospitalImages.length > 0 && (
+                        <ImageComponentFromBase64
+                          base64String={
+                            hospital.hospitalImages[0].image
+                          }
+                        />
+                      )}
+                    <CardBody>
+                      <CardTitle tag="h5" className="custom-card-header">
+                        {hospital.hospitalName}
+                      </CardTitle>
+                    </CardBody>
+                  </Card>
+                </div>
+              </Link>
+            </Col>
+          ))}
         </Row>
       )}
     </Container>
