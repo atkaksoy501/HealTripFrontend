@@ -13,7 +13,7 @@ import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 import { Link } from "react-router-dom";
 
-export default function Treatments({ departmentId, departmentName }) {
+export default function HospitalTreatments({ departmentId, departmentName }) {
   const [treatments, setTreatments] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -34,7 +34,7 @@ export default function Treatments({ departmentId, departmentName }) {
         });
     }
   }, [departmentId]);
-
+  
   return (
     <div style={{ marginTop: "1%" }}>
       <div style={{ textAlign: "center", paddingTop: "30px" }}>

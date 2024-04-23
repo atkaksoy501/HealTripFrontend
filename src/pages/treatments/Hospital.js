@@ -3,53 +3,38 @@ import { useParams, Link } from "react-router-dom";
 import { Container, Row, Col, CardBody, CardTitle, Card } from "reactstrap";
 import ClipLoader from "react-spinners/ClipLoader";
 import ImageComponentFromBase64 from "./ImageComponentFromBase64";
+import HospitalDepartments from "./HospitalDepartments";
+import HospitalTreatments from "./HospitalTreatments";
 
 export default function Hospital() {
   const { hospital_id } = useParams();
   const [hospitalData, setHospitalData] = useState(null);
-  const [treatmentsData, setTreatmentsData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedDepartmentId, setSelectedDepartmentId] = useState(1);
+  const [selectedDepartmentName, setSelectedDepartmentName] = useState("Aesthetic Surgery");
+
+  const handleDepartmentClick = (departmentId, departmentName) => {
+    setSelectedDepartmentId(departmentId);
+    setSelectedDepartmentName(departmentName);
+  };
 
   useEffect(() => {
     const fetchHospitalData = async () => {
       try {
-        const hospitalResponse = await fetch(
+        const response = await fetch(
           `https://healtrip.azurewebsites.net/hospital/get/${hospital_id}`
         );
-        if (!hospitalResponse.ok) {
+        if (response.ok) {
+          const data = await response.json();
+          setHospitalData(data);
+          setLoading(false);
+        } else {
           throw new Error("Failed to fetch hospital data");
         }
-        const hospitalData = await hospitalResponse.json();
-        setHospitalData(hospitalData);
-
-        const departmentIds = hospitalData.departments.map(
-          (departmentObj) => departmentObj.department.id
-        );
-
-        const treatmentsDataArray = await Promise.all(
-          departmentIds.map(async (departmentId) => {
-            const response = await fetch(
-              `https://healtrip.azurewebsites.net/retreat/getByDepartmentId/${departmentId}`
-            );
-            if (!response.ok) {
-              throw new Error(
-                `Failed to fetch treatments data for department ${departmentId}`
-              );
-            }
-            const departmentTreatments = await response.json();
-            return departmentTreatments;
-          })
-        );
-
-        const allTreatments = treatmentsDataArray.flat();
-        setTreatmentsData(allTreatments);
-
-        setLoading(false); 
       } catch (error) {
         console.error(error);
       }
     };
-
     fetchHospitalData();
   }, [hospital_id]);
 
@@ -108,45 +93,11 @@ export default function Hospital() {
                 hospitalData.address.country}
             </p>
           </Col>
-          <h1 style={{ marginTop: "30px", color: "#295D6D" }}>Treatments</h1>
-          {treatmentsData.map((treatment) => (
-            <Col
-              lg={3}
-              md={6}
-              key={treatment.id}
-              style={{
-                marginTop: "10px",
-                display: "flex",
-              }}
-            >
-              <Link
-                to={`/treatments/${encodeURIComponent(treatment.id)}`}
-                state={{ treatment }}
-              >
-                <div className="link-image">
-                  <Card
-                    className="custom-card-content"
-                    style={{
-                      width: "100%",
-                    }}
-                  >
-                    {console.log(treatment)}
-                    {treatment.image &&
-                      treatment.image.image && ( // Burada image'nin var olduğunu ve image içinde image'nin de var olduğunu kontrol ediyoruz
-                        <ImageComponentFromBase64
-                          base64String={treatment.image.image}
-                        />
-                      )}
-                    <CardBody>
-                      <CardTitle tag="h5" className="custom-card-header">
-                        {treatment.retreat_name}
-                      </CardTitle>
-                    </CardBody>
-                  </Card>
-                </div>
-              </Link>
-            </Col>
-          ))}
+
+          <HospitalDepartments hospital_id={hospital_id} onDepartmentClick={handleDepartmentClick} />
+
+          <HospitalTreatments departmentId={selectedDepartmentId} departmentName={selectedDepartmentName} />
+
           <h1 style={{ marginTop: "30px", color: "#295D6D" }}>Doctors</h1>
           {hospitalData.doctors.map((doctor) => (
             <Col
