@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Container, Row, Col, CardBody, CardTitle, Card } from "reactstrap";
+import { Container, Row, Col, CardBody, CardTitle, Card, Button} from "reactstrap";
 import ClipLoader from "react-spinners/ClipLoader";
 import ImageComponentFromBase64 from "./ImageComponentFromBase64";
 import HospitalDepartments from "./HospitalDepartments";
 import HospitalTreatments from "./HospitalTreatments";
+import { PopupForm } from "./PopupForm";
+import { PopupLogin } from "../../layouts/PopupLogin";
 
 export default function Hospital() {
   const { hospital_id } = useParams();
@@ -12,10 +14,16 @@ export default function Hospital() {
   const [loading, setLoading] = useState(true);
   const [selectedDepartmentId, setSelectedDepartmentId] = useState(1);
   const [selectedDepartmentName, setSelectedDepartmentName] = useState("Aesthetic Surgery");
+  const [showPopup, setShowPopup] = useState(false);
+  const [tokenExists, setTokenExists] = useState(false);
 
   const handleDepartmentClick = (departmentId, departmentName) => {
     setSelectedDepartmentId(departmentId);
     setSelectedDepartmentName(departmentName);
+  };
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
   };
 
   useEffect(() => {
@@ -37,6 +45,15 @@ export default function Hospital() {
     };
     fetchHospitalData();
   }, [hospital_id]);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setTokenExists(true);
+    } else {
+      setTokenExists(false);
+    }
+  }, []);
 
   return (
     <Container
@@ -93,7 +110,10 @@ export default function Hospital() {
                 hospitalData.address.country}
             </p>
           </Col>
-
+          <div style={{display:"flex", justifyContent:"center"}}>
+            <Button className="button" style={{ backgroundColor: '#295D6D', fontSize:"18px", borderRadius:"20px", width:"36%", fontWeight:"bold", marginTop:"30px", marginBottom:"40px"}} onClick={togglePopup}><span>Contact with {hospitalData.hospitalName}</span></Button> 
+          </div>
+      
           <HospitalDepartments hospital_id={hospital_id} onDepartmentClick={handleDepartmentClick} />
 
           <HospitalTreatments departmentId={selectedDepartmentId} departmentName={selectedDepartmentName} />
@@ -138,6 +158,11 @@ export default function Hospital() {
           ))}
         </Row>
       )}
+          {tokenExists ? (
+            <PopupForm trigger={showPopup} setTrigger={setShowPopup} /> 
+          ) : (
+            <PopupLogin trigger={showPopup} setTrigger={setShowPopup}/>
+          )}
     </Container>
   );
 }
