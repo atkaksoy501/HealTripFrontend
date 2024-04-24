@@ -27,8 +27,6 @@ export const PopupForm = (props) => {
   const [treatments, setTreatments] = useState([]);
   const [selectedTreatmentId, setSelectedTreatmentId] = useState("");
 
-
-
   useEffect(() => {
     const userToken = localStorage.getItem("token");
     if (userToken) {
@@ -51,7 +49,6 @@ export const PopupForm = (props) => {
         console.error("Error fetching treatments:", error);
       });
   };
-
 
   return props.trigger ? (
     <Grid className="popup-form">
