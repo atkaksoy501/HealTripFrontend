@@ -13,6 +13,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { PopupLogin } from "./PopupLogin";
+import Swal from 'sweetalert2';
 
 
 export const Signup = (props) => {
@@ -60,10 +61,13 @@ export const Signup = (props) => {
       await axios.post('https://healtrip.azurewebsites.net/auth/register/patient', payload);
       handleClear();
       handleClosePopup()
+      Swal.fire("Successfully!", "You are registered successfully.", "success");
+
       setShowLogin(true);
       navigate(""); 
     } catch (error) {
       console.error('Signup error:', error);
+      Swal.fire("Error!", "An error occurred while attempting to sign up.", "error");
     }
   };
 
@@ -78,7 +82,7 @@ export const Signup = (props) => {
 
   return props.trigger ? (
     <Grid className="popup-signup">
-      <form onSubmit={(e) => handleRegister(e)}>
+      <form onSubmit={(e) => handleRegister(e)} onKeyPress={(e) => { if (e.key === 'Enter') handleRegister(e) }}>
       <Paper elevation={10} style={paperStyle}>
         <Grid align="end">
           <button className="close-btn" onClick={handleClosePopup}><CloseIcon style={{color:"#265867"}}/></button>

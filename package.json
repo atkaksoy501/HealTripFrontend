@@ -33,6 +33,7 @@
     "semantic-ui-react": "^2.1.5",
     "slick-carousel": "^1.8.1",
     "spring": "^0.0.0",
+    "sweetalert2": "^11.10.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

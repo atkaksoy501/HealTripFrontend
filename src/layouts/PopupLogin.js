@@ -16,6 +16,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import { Signup } from "./Signup";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 export const PopupLogin = (props) => {
   const paperStyle = {
@@ -63,13 +64,14 @@ export const PopupLogin = (props) => {
       window.location.reload(); 
     } catch (error) {
       console.error('Signup error:', error);
+      Swal.fire("Error!", "Your password or username is wrong.", "error");
     }
   }
 
 
   return props.trigger ? (
     <Grid className="popup-login">
-      <form onSubmit={(e) => handleRegister(e)}>
+      <form onSubmit={(e) => handleRegister(e)} onKeyPress={(e) => { if (e.key === 'Enter') handleRegister(e) }}>
       <Paper elevation={10} style={paperStyle}>
         <Grid align="end">
           <button className="close-btn" onClick={() => props.setTrigger(false)}><CloseIcon style={{color:"#265867"}}/></button>
