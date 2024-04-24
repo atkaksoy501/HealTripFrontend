@@ -12,6 +12,8 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import { useParams } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 
 export const PopupForm = (props) => {
@@ -26,6 +28,8 @@ export const PopupForm = (props) => {
   const [description, setDescription] = useState()
   const [treatments, setTreatments] = useState([]);
   const [selectedTreatmentId, setSelectedTreatmentId] = useState("");
+  const { hospital_id } = useParams();
+
 
   useEffect(() => {
     const userToken = localStorage.getItem("token");
@@ -50,9 +54,51 @@ export const PopupForm = (props) => {
       });
   };
 
+  const sendForm = async (e) => {
+    e.preventDefault();
+  
+    try {
+      const token = localStorage.getItem("token");
+      
+      if (!token) {
+        throw new Error("Token not found in localStorage");
+      }
+  
+      const payload = {
+        patient_id: user.id,
+        retreat_id: selectedTreatmentId,
+        description: description,
+        hospital_id: hospital_id,
+      };
+  
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+  
+      const response = await axios.post(
+        'https://healtrip.azurewebsites.net/booking/add',
+        payload,
+        { headers: headers }
+      );
+  
+      if (response.status === 200) {
+        Swal.fire("Success!", "Your Form Is Sent.", "success");
+        props.setTrigger(false); // Popup'ı kapat
+        setDescription("");
+        setSelectedTreatmentId("");
+      } else {
+        throw new Error(`Request failed with status code ${response.status}`);
+      }
+    } catch (error) {
+      console.error('Error', error);
+      Swal.fire("Error!", "An error occurred while attempting to send form", "error");
+    }
+  };
+  
+
   return props.trigger ? (
     <Grid className="popup-form">
-      <form>
+      <form onSubmit={(e) => sendForm(e)} onKeyPress={(e) => { if (e.key === 'Enter') sendForm(e) }}>
         <Paper elevation={10} style={paperStyle}>
           <Grid align="end">
             <button
