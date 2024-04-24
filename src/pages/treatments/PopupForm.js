@@ -83,7 +83,7 @@ export const PopupForm = (props) => {
   
       if (response.status === 200) {
         Swal.fire("Success!", "Your Form Is Sent.", "success");
-        props.setTrigger(false); // Popup'ı kapat
+        props.setTrigger(false);
         setDescription("");
         setSelectedTreatmentId("");
       } else {
@@ -94,7 +94,6 @@ export const PopupForm = (props) => {
       Swal.fire("Error!", "An error occurred while attempting to send form", "error");
     }
   };
-  
 
   return props.trigger ? (
     <Grid className="popup-form">
