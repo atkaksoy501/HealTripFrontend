@@ -22,7 +22,7 @@ export default function SignedIn({ signOut }) {
     }).then((result) => {
       if (result.isConfirmed) {
         signOut();
-        window.location.reload(); 
+        window.location.href = window.location.origin;
       }
     });
   };
