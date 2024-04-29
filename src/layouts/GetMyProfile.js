@@ -130,7 +130,7 @@ export default function GetMyProfile() {
                   </div>
                   <div style={{ display: "flex" }}>
                     <h3 style={{ fontWeight: "1000", fontSize: "20px" }}>
-                      Retreat Name:{" "}
+                      Medical History: {" "}
                     </h3>
 
                     <p
