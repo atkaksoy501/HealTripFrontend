@@ -3,6 +3,8 @@
     color:#fff !important;
     font-size: 1.1rem !important;
     font-weight: bold;
+    border-color: #c4c1c1 !important;
+    border-width: 2px !important;
 }
 
 .custom-button:hover {
