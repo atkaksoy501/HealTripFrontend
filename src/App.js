@@ -21,6 +21,7 @@ import TreatmentDetail from "./pages/treatments/TreatmentDetail";
 import Hospital from "./pages/treatments/Hospital";
 import Doctor from "./pages/treatments/Doctor";
 import GetMedicalAdvice from "./layouts/GetMedicalAdvice";
+import GetMyProfile from "./layouts/GetMyProfile";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/blogs/Everything-You-Need-to-Know-About-General-Anaesthesia" Component={BlogDetails6} />
         <Route path="/contact" Component={Contact} />
         <Route path="/get-medical-advice" Component={GetMedicalAdvice} />
+        <Route path="/get-my-profile" Component={GetMyProfile} />
       </Routes>
       <Footer />
     </div>
