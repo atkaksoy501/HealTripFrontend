@@ -180,6 +180,7 @@ export const PopupForm = (props) => {
             variant="contained"
             style={btnstyle}    
             fullWidth
+            disabled={loading}
           >
             {loading ? <ClipLoader size={24} color="#fff" /> : "Send Form"}
           </Button>

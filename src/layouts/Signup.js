@@ -14,6 +14,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { PopupLogin } from "./PopupLogin";
 import Swal from 'sweetalert2';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 export const Signup = (props) => {
@@ -33,6 +34,7 @@ export const Signup = (props) => {
   const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
   const [emailError, setEmailError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleClosePopup = () => {
     props.setTrigger(false);
@@ -45,8 +47,10 @@ export const Signup = (props) => {
   
   const handleRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (!isEmailValid(email)) {
       setEmailError('Please enter a valid email address.');
+      setLoading(false);
       return;
     }
     const payload = {
@@ -68,6 +72,8 @@ export const Signup = (props) => {
     } catch (error) {
       console.error('Signup error:', error);
       Swal.fire("Error!", "An error occurred while attempting to sign up.", "error");
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -161,8 +167,9 @@ export const Signup = (props) => {
           variant="contained"
           style={btnstyle}
           fullWidth
+          disabled={loading}
         >
-          Sign Up
+          {loading ? <ClipLoader size={24} color="#fff" /> : "Sign up"}
         </Button>
 
         <Typography style={{marginTop:"10px"}}>
