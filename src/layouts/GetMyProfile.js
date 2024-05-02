@@ -537,7 +537,7 @@ export default function GetMyProfile() {
               </Col>
 
               <Col md={4} >
-                <Label>Birth Date</Label>
+                <Label style={{ color: "#295d6d", fontWeight: "bold" }}>Birth Date</Label>
                 <FormGroup style={{ paddingTop: "2px" }}>
                   <input
                     type="date"

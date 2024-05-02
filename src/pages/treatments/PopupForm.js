@@ -14,6 +14,7 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 export const PopupForm = (props) => {
@@ -29,6 +30,7 @@ export const PopupForm = (props) => {
   const [treatments, setTreatments] = useState([]);
   const [selectedTreatmentId, setSelectedTreatmentId] = useState("");
   const { hospital_id } = useParams();
+  const [loading, setLoading] = useState(false);
 
 
   useEffect(() => {
@@ -55,6 +57,7 @@ export const PopupForm = (props) => {
   };
 
   const sendForm = async (e) => {
+    setLoading(true);
     e.preventDefault();
   
     try {
@@ -92,6 +95,8 @@ export const PopupForm = (props) => {
     } catch (error) {
       console.error('Error', error);
       Swal.fire("Error!", "An error occurred while attempting to send form", "error");
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -176,7 +181,7 @@ export const PopupForm = (props) => {
             style={btnstyle}    
             fullWidth
           >
-            Send Form
+            {loading ? <ClipLoader size={24} color="#fff" /> : "Send Form"}
           </Button>
         </Paper>
       </form>
