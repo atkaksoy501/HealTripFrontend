@@ -9,6 +9,8 @@ import {
   Label,
   Input,
 } from "reactstrap";
+import {Link } from "react-router-dom";
+
 
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
@@ -263,9 +265,12 @@ export default function GetMyProfile() {
                   {hospitalImages &&
                     hospitalImages.length > 0 &&
                     hospitalImages[index] && (
-                      <ImageComponentFromBase64
-                        base64String={hospitalImages[index].image}
-                      />
+                      <Link
+                      to={`/hospitals/${encodeURIComponent(form.hospital.id)}`}
+                    >                       <ImageComponentFromBase64
+                    base64String={hospitalImages[index].image}
+                  /></Link>
+
                     )}
                 </div>
 
