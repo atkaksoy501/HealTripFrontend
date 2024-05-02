@@ -241,31 +241,34 @@ export default function GetMyProfile() {
       </ButtonGroup>
 
       {showForms ? (
-        patientForms &&
-        patientForms.map((form, index = 0) => (
-          <div key={form.id} style={{ marginTop: "30px" }}>
-            <li
-              key={form.id}
-              className="list-group-item"
-              style={{
-                border: "1px solid #ccc",
-                display: "flex",
-                flexDirection: "row",
-                flexWrap: "wrap",
-                width: "80%",
-                padding: "10px",
-                margin: "auto",
-              }}
-            >
-              <div style={{ paddingRight: "20px" }}>
-                {hospitalImages &&
-                  hospitalImages.length > 0 &&
-                  hospitalImages[index] && (
-                    <ImageComponentFromBase64
-                      base64String={hospitalImages[index].image}
-                    />
-                  )}
-              </div>
+      <div>
+        <h1 style={{textAlign:"center", color:"#295d6d", paddingTop:"30px"}}>My Forms</h1>
+        {patientForms &&
+          patientForms.map((form, index = 0) => (
+            <div key={form.id} style={{ marginTop: "30px" }}>
+              <li
+                key={form.id}
+                className="list-group-item"
+                style={{
+                  border: "1px solid #ccc",
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  width: "80%",
+                  padding: "10px",
+                  margin: "auto",
+                }}
+              >
+                <div style={{ paddingRight: "20px" }}>
+                  {hospitalImages &&
+                    hospitalImages.length > 0 &&
+                    hospitalImages[index] && (
+                      <ImageComponentFromBase64
+                        base64String={hospitalImages[index].image}
+                      />
+                    )}
+                </div>
+
 
               <div>
                 <div style={{ display: "flex", color: "#295d6d" }}>
@@ -357,10 +360,13 @@ export default function GetMyProfile() {
               </div>
             </li>
           </div>
-        ))
+        ))}
+        </div>
       ) : (
         <div style={{ padding: "0 100px", paddingTop:"50px" }}>
           <Form onSubmit={(e) => handleChangePassword(e)}>
+        <h1 style={{textAlign:"center", color:"#295d6d",paddingBottom:"20px"}}>Change Password</h1>
+
             <Row>
               <Col md={4}>
                 <FormGroup>
@@ -413,6 +419,7 @@ export default function GetMyProfile() {
 
             </Form>
             <Form onSubmit={(e) => handleSave(e)}>
+
             <Row
               style={{
                 borderTop: "2px solid #ccc",
@@ -420,6 +427,8 @@ export default function GetMyProfile() {
                 paddingTop: "20px",
               }}
             >
+        <h1 style={{textAlign:"center", color:"#295d6d", paddingBottom:"30px", paddingTop:"10px"}}>Change Profile Information</h1>
+
               <Col md={4}>
                 <FormGroup>
                   <Label
