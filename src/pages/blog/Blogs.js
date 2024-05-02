@@ -8,11 +8,17 @@ import photo4 from "./blog4.jpg";
 import photo5 from "./blog5.jpg";
 import photo6 from "./blog6.jpg";
 import { Link } from "react-router-dom";
+import about_background from "./blog10.jpg"
 
 export default function Blogs() {
   return (
     <div style={{ marginTop: "2%" }}>
+            <div className="section-title" style={{backgroundImage: `url(${about_background})`}}>
+        <h1 style={{textAlign: "center", color: "#295D6D", fontSize: "4.5rem", fontWeight: "bold", fontFamily: "'Oswald', sans-serif"}}>BLOGS</h1>
+          <p style={{textAlign:"center", color:"#295D6D", fontSize:"1.1rem",fontWeight:"700"}}>Welcome to our blog page! Explore insightful articles, helpful tips, and engaging content created just for you.</p>
+        </div>
       <Container style={{ padding: "30px 0" }}>
+        <h2 style={{ color: "#3c879e", fontSize: "1.71rem"}}>Dive Into Our Collection and Discover Something New With Every Click:</h2>
         <Row>
           <Col md={4}>
           <Link to="/blogs/what-nose-fillers-can-do-for-your-nose" className="blog-link">
@@ -55,7 +61,7 @@ export default function Blogs() {
           </Col>
           
         </Row>
-        <Row>
+        <Row style={{paddingTop:"30px"}}>
           <Col md={4}>
           <Link to="/blogs/Hair-Loss-for-Men" className="blog-link">
             <img src={photo4} alt="Sude" className="img-fluid" />
