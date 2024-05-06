@@ -498,6 +498,7 @@ export default function GetMyProfile() {
                   </Label>
                   <Input
                     maxLength="11"
+                    minLength="11"
                     value={phoneNumber}
                     style={{ borderWidth: "2px" }}
                     onChange={(e) => setPhoneNumber(e.target.value)}
