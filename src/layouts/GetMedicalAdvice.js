@@ -5,7 +5,7 @@ export default function GetMedicalAdvice() {
     <div style={{ display: 'flex', flexDirection: 'column', height: '90vh', marginTop:"100px", marginBottom:"40px"}}>
       <iframe
         src="https://healtripai.onrender.com/?embed=true&pass=ss32_817"
-        title="Embedded Content"
+        title="HealTrip AI"
         frameBorder="0"
         style={{
           flex: 1,
