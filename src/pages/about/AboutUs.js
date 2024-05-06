@@ -36,6 +36,10 @@ export default function AboutUs() {
       </Container>
       <ExperienceSection></ExperienceSection>
       <WhyHealTripSection></WhyHealTripSection>
+      <h1>ABOUT US</h1>
+      <h1>ABOUT US</h1>
+      <h1>ABOUT US</h1>
+      <h1>ABOUT US</h1>
     </section>
   );
 }
