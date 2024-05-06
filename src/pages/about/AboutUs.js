@@ -6,6 +6,7 @@ import "./AboutUs.css";
 import about_background from "./about_background.jpg"
 import ExperienceSection from "../home/ExperienceSection";
 import { WhyHealTripSection } from "../home/WhyHealTripSection";
+import NewAboutSection from "./NewAboutSection";
 export default function AboutUs() {
   return (
     <section id="about" className="about" style={{marginTop:"59px"}}>
@@ -36,10 +37,7 @@ export default function AboutUs() {
       </Container>
       <ExperienceSection></ExperienceSection>
       <WhyHealTripSection></WhyHealTripSection>
-      <h1>ABOUT US</h1>
-      <h1>ABOUT US</h1>
-      <h1>ABOUT US</h1>
-      <h1>ABOUT US</h1>
+      <NewAboutSection></NewAboutSection>
     </section>
   );
 }
