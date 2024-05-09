@@ -32,29 +32,25 @@ export const PopupForm = (props) => {
   const { hospital_id } = useParams();
   const [loading, setLoading] = useState(false);
 
-
   useEffect(() => {
+    const fetchTreatments = () => {
+      axios.get(`https://healtrip.azurewebsites.net/retreat/getByHospitalId/${hospital_id}`)
+        .then((response) => {
+          setTreatments(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching treatments:", error);
+        });
+    };
+  
     const userToken = localStorage.getItem("token");
     if (userToken) {
       const decodedToken = jwtDecode(userToken);
       setUser(decodedToken);
     }
     fetchTreatments();
-  }, []);
-
-  useEffect(() => {
-    fetchTreatments();
-  }, []);
-
-  const fetchTreatments = () => {
-    axios.get("https://healtrip.azurewebsites.net/retreat/getAll")
-      .then((response) => {
-        setTreatments(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching treatments:", error);
-      });
-  };
+  }, [hospital_id]); 
+  
 
   const sendForm = async (e) => {
     setLoading(true);
