@@ -1,5 +1,4 @@
 import React from 'react';
-import PatientStories from './PatientStories';
 import { Container, Row, Col } from "reactstrap";
 import whitening from "./dental1.jpeg";
 import photo from "./seffafplak.webp";

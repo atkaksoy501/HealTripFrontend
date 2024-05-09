@@ -1,5 +1,4 @@
 import React from 'react';
-import PatientStories from './PatientStories';
 import { Container, Row, Col } from "reactstrap";
 import photo1 from "./blog4.jpg";
 import photo2 from "./FUE-Follicular-Unit-Extraction.jpg";

@@ -49,39 +49,54 @@ export default function Doctor() {
           </Col>
         </Row>
       ) : (
-        <Row>
-          <Col lg="4" data-aos="fade-right">
-            <div>
-              <ImageComponentFromBase64
-                base64String={doctorData.doctorImage}
-              />
-            </div>
-          </Col>
+        <>
+          <Row>
+            <Col lg="2" data-aos="fade-right" style={{marginBottom:"20px", paddingRight:"20px"}}>
+              <div>
+                <ImageComponentFromBase64
+                  base64String={doctorData.doctorImage}
+                />
+                <p
+                  style={{ color: "#295D6D", fontSize: "1.1rem", marginTop:"10px", fontWeight:"bold" }}
+                  className="fst-italic"
+                >
+                  {"Consults at " + doctorData.hospital.hospitalName}
+                </p>
+                <p
+                  style={{ color: "#295D6D", fontSize: "1.1rem",  fontWeight:"bold"}}
+                  className="fst-italic"
+                >
+                  {"Department: " + doctorData.department.departmentName}
+                </p>
+                <p
+                  style={{ color: "#295D6D", fontSize: "1.1rem", fontWeight:"bold" }}
+                  className="fst-italic"
+                >
+                  {`Experience: ${doctorData.experience_year}+ years`}
+                </p>
+              </div>
+            </Col>
 
-          <Col lg="8" className="pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h2 style={{ color: "#295d6d" }}>
-              {doctorData.doctorName}
-            </h2>
-            <p
-              style={{ color: "#295D6D", fontSize: "1.1rem" }}
-              className="fst-italic"
-            >
-              {"Consults at "+ doctorData.hospital.hospitalName}
-            </p>
-            <p
-              style={{ color: "#295D6D", fontSize: "1.1rem" }}
-              className="fst-italic"
-            >
-              {"Department: "+ doctorData.department.departmentName}
-            </p>
-            <p
-              style={{ color: "#295D6D", fontSize: "1.1rem" }}
-              className="fst-italic"
-            >
-              {`Experience: ${doctorData.experience_year}+ years`}
-            </p>
-          </Col>
-        </Row>
+            <Col lg="10" >
+              <div>
+              <h2 style={{ color: "#295d6d" }}>{doctorData.doctorName}</h2>
+
+                <p
+                  style={{
+                    color: "#295D6D",
+                    fontSize: "1.1rem",
+                    textAlign: "justify",
+                    lineHeight: "35px",
+                  }}
+                  className="fst-italic"
+                >
+                  {doctorData.description}
+                </p>
+              </div>
+            </Col>
+          </Row>
+
+        </>
       )}
     </Container>
   );

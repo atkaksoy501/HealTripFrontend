@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React from "react";
+import {React, useState} from "react";
 import {
   Image,
   FormInput,
@@ -19,8 +19,56 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { Container, Row, Col } from "reactstrap";
+import Swal from 'sweetalert2';
+import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [address, setAddress] = useState("");
+
+  const handleSave = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+  
+    try {
+      const payload = {
+        firstName: firstName,
+        lastName: lastName,
+        address: address,
+        phoneNumber: phoneNumber,
+        email: email,
+        message: message
+      };
+  
+      const response = await axios.post(
+        'https://healtrip.azurewebsites.net/email/send',
+        payload
+      );
+  
+      if (response.status === 200) {
+        Swal.fire("Success!", "Your Form Is Sent.", "success");
+        setTimeout(function () {
+          window.location.reload();
+        }, 2000);
+      } else {
+        throw new Error(`Request failed with status code ${response.status}`);
+      }
+    } catch (error) {
+      console.error('Error', error);
+      Swal.fire("Error!", "An error occurred while attempting to send form", "error");
+    } finally{
+      setLoading(false)
+      
+    }
+  };
+
+
   return (
     <div
       class="contact"
@@ -65,21 +113,21 @@ export default function Contact() {
             <Row>
               <Col md={6}>
                 <h2>Please fill in your details</h2>
-                <Form>
+                <Form onSubmit={(e) => handleSave(e)}>
                   <FormGroup widths={2}>
-                    <FormInput placeholder="First Name" />
-                    <FormInput placeholder="Last Name" />
+                    <FormInput placeholder="First Name" onChange={(e) => setFirstName(e.target.value)} />
+                    <FormInput placeholder="Last Name" onChange={(e) => setLastName(e.target.value)}/>
                   </FormGroup>
                   <FormGroup widths={2}>
-                    <FormInput placeholder="Address" />
-                    <FormInput placeholder="Phone Number" />
+                    <FormInput placeholder="Address" onChange={(e) => setAddress(e.target.value)}/>
+                    <FormInput placeholder="Phone Number" onChange={(e) => setPhoneNumber(e.target.value)}/>
                   </FormGroup>
-                  <FormInput width={16} placeholder="E-Mail Address" />
-                  <FormInput width={16} placeholder="Your Message" />
-                  <FormCheckbox label="I agree to the Terms and Conditions" />
+                  <FormInput width={16} placeholder="E-Mail Address" onChange={(e) => setEmail(e.target.value)}/>
+                  <FormInput width={16} placeholder="Your Message" onChange={(e) => setMessage(e.target.value)} />
+                  <FormCheckbox label="I agree to the Terms and Conditions" required="true"/>
                   <ButtonGroup widths="3">
-                    <Button type="submit" className="sendButton">
-                      Send
+                    <Button type="submit" className="sendButton" disabled={loading}>
+                    {loading ? <ClipLoader size={24} color="#fff" /> : "Send"}
                     </Button>
                   </ButtonGroup>
                 </Form>
@@ -114,7 +162,7 @@ export default function Contact() {
                     color="#3c879e"
                     style={{ fontSize: "1.1em" }}
                   />
-                  <span>codewizards@healtrip.com</span>
+                  <span>healtrip.codewizards@gmail.com</span>
                 </div>
               </Col>
             </Row>

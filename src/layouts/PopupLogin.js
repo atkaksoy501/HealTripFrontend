@@ -63,7 +63,6 @@ export const PopupLogin = (props) => {
       const responseToken = await axios.post('https://healtrip.azurewebsites.net/auth/authenticate', payload);
       setEmailError();
       localStorage.setItem("token", responseToken?.data)
-      navigate("/");
       handleClosePopup()
       window.location.reload(); 
     } catch (error) {
