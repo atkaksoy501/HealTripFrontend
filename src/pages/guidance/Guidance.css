@@ -1,0 +1,33 @@
+.guidance-container {
+    margin-top: 5%;
+   
+  }
+  
+  .content-header {
+    font-size: 2em;
+  }
+  
+  .content-text {
+    font-size: 3em;
+  }
+  
+  .guidance-item {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center; 
+  }
+  
+  .icon {
+    width: 100px; 
+    height: auto;
+    margin-right: 20px; 
+  }
+  
+  .guidance-item h1 {
+    font-size: 4em;
+  }
+  
+  .guidance-item h3 {
+    font-size: 2em;
+  }
+  
