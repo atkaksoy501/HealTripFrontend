@@ -14,7 +14,7 @@ export default function TreatmentDetail() {
     const fetchRetreatData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/retreat/get/${retreat_id}`
+          `https://healtrip.azurewebsites.net/retreat/get/${retreat_id}`
         );
         if (response.ok) {
           const data = await response.json();

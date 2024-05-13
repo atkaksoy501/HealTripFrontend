@@ -12,8 +12,8 @@ export default function Hospital() {
   const { hospital_id } = useParams();
   const [hospitalData, setHospitalData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [selectedDepartmentId, setSelectedDepartmentId] = useState(1);
-  const [selectedDepartmentName, setSelectedDepartmentName] = useState("Aesthetic Surgery");
+  const [selectedDepartmentId, setSelectedDepartmentId] = useState();
+  const [selectedDepartmentName, setSelectedDepartmentName] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [tokenExists, setTokenExists] = useState(false);
 

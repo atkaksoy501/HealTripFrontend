@@ -10,7 +10,7 @@ import {
   Input,
 } from "reactstrap";
 import {Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
@@ -34,7 +34,7 @@ export default function GetMyProfile() {
   const [password, setPassword] = useState("");
   const [height, setHeight] = useState();
   const [weight, setWeight] = useState();
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState();
   const [birthDate, setBirthDate] = useState();
   const [oldEmail, setOldEmail] = useState("");
   const [oldPhoneNumber, setOldPhoneNumber] = useState("");
@@ -42,6 +42,7 @@ export default function GetMyProfile() {
   const [hospitalIds, setHospitalIds] = useState([])
   const [oldPassword, setOldPassword] = useState("")
   const [authPassword, setAuthPassword] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const userToken = localStorage.getItem("token");
@@ -151,6 +152,7 @@ export default function GetMyProfile() {
       }
       const responseToken = await axios.post('https://healtrip.azurewebsites.net/auth/authenticate', tokenPayload);
       localStorage.setItem("token", responseToken?.data)
+      navigate("/");
       window.location.reload();
     } catch (error) {
       console.error("Save error:", error);
@@ -212,6 +214,7 @@ export default function GetMyProfile() {
       }
       const responseToken = await axios.post('https://healtrip.azurewebsites.net/auth/authenticate', tokenPayload);
       localStorage.setItem("token", responseToken?.data)
+      navigate("/");
       window.location.reload();
     } catch (error) {
       console.error("Save error:", error);
@@ -543,9 +546,9 @@ export default function GetMyProfile() {
                       style={{ borderWidth: "2px" }}
                       onChange={(e) => setGender(e.target.value)}
                     >
-                      <option>Male</option>
-                      <option>Female</option>
-                      <option>Undefined</option>
+                      <option>MALE</option>
+                      <option>FEMALE</option>
+                      <option>UNDEFINED</option>
                     </Input>
                   </Col>
                 </FormGroup>
