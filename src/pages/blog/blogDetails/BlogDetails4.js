@@ -4,7 +4,7 @@ import photo4 from "../blog4.jpg";
 
 export default function BlogDetails4() {
   return (
-    <Container style={{ marginTop: "2%" }}>
+    <Container style={{ marginTop: "5%" }}>
       <img src={photo4} alt="Hair Loss in Men" className="img-fluid" />
       <h2 className="content_header">
         Hair Loss in Men: Causes, Treatment Options, and Prevention

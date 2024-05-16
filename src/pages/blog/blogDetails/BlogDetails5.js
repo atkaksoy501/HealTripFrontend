@@ -4,7 +4,7 @@ import photo5 from "../blog5.jpg";
 
 export default function BlogDetails5() {
   return (
-    <Container style={{ marginTop: "2%" }}>
+    <Container style={{ marginTop: "5%" }}>
       <img src={photo5} alt="Almond Eye Surgery in Turkey" className="img-fluid" />
       <h2 className="content_header">Almond Eye Surgery in Turkey: Benefits, Costs, Risks, and More</h2>
       <p className="content_text">

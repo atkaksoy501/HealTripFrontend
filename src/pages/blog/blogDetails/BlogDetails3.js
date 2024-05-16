@@ -1,10 +1,38 @@
-import React from "react";
-import { Container } from "reactstrap";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Container,Row,Col,CardBody,CardTitle,Card, } from "reactstrap";
 import photo3 from "../blog3.jpg";
+import { TenMp } from "@mui/icons-material";
+import axios from "axios";
+import ImageComponentFromBase64 from "../ImageComponentFromBase64";
 
 export default function BlogDetails3() {
+  const [retreatData, setRetreatData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const requestData = {
+      retreatNames: ['Dental Crown','Dental Bridge','Teeth Whitening','Tooth Extraction','Dental Implant']
+    };
+  useEffect(() => {
+    setLoading(true);
+   
+      axios
+        .post(
+          `https://healtrip.azurewebsites.net/retreat/getByName`,{
+            retreatNames: ['Dental Crown','Dental Bridge','Teeth Whitening','Tooth Extraction','Dental Implant']
+          },
+        )
+        .then((response) => {
+          setRetreatData(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching treatments:", error);
+          setLoading(false);
+        });
+    
+  },[] );
   return (
-    <Container style={{ marginTop: "2%" }}>
+    <Container style={{ marginTop: "5%" }}>
       <img src={photo3} alt="Good Oral Hygiene" className="img-fluid" />
       <h2 className="content_header">
         Good Oral Hygiene: Tips for Maintaining Healthy Teeth and Gums
@@ -29,6 +57,48 @@ export default function BlogDetails3() {
         <br /><br />
         In conclusion, good oral hygiene is essential to maintaining healthy teeth and gums. Brush your teeth twice a day, floss daily, use mouthwash, visit your dentist regularly, and eat a healthy diet. By following these simple steps, you can keep your mouth healthy and prevent dental problems.
       </p>
+      <div>
+            <Container>
+              <Row>
+                {retreatData.map((retreat) => (
+                  <Col
+                    md={4}
+                    key={retreat.id}
+                    style={{
+                      padding: "1.5%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Link
+                      to={`/treatments/${encodeURIComponent(
+                        retreat.id
+                      )}`}
+                      state={{ retreat }}
+                    >
+                      <div className="link-image">
+                        <Card
+                          className="custom-card-content"
+                          style={{
+                            width: "18rem",
+                          }}
+                        >
+                          <ImageComponentFromBase64
+                            base64String={retreat.image.image}
+                          />
+                          <CardBody>
+                            <CardTitle tag="h5" className="custom-card-header">
+                              {retreat.retreat_name}
+                            </CardTitle>
+                          </CardBody>
+                        </Card>
+                      </div>
+                    </Link>
+                  </Col>
+                ))}
+              </Row>
+            </Container>
+          </div>
     </Container>
   );
 }

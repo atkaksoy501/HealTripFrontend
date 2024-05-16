@@ -1,9 +1,39 @@
-import React from "react";
-import { Container } from "reactstrap";
+import React, { useEffect, useState }  from "react";
+import { Link } from "react-router-dom";
+import { Container,Row,Col,CardBody,CardTitle,Card, } from "reactstrap";
 import photo10 from "../blog10.jpg";
+import ImageComponentFromBase64 from "../ImageComponentFromBase64";
+import axios from "axios";
+
 export default function BlogDetails10() {
+  const [retreatData, setRetreatData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const requestData = {
+      retreatNames: ['Gastric Balloon']
+    };
+  
+    useEffect(() => {
+      setLoading(true);
+     
+        axios
+          .post(
+            `https://healtrip.azurewebsites.net/retreat/getByName`,{
+              retreatNames: ['Gastric Balloon']
+            },
+          )
+          .then((response) => {
+            setRetreatData(response.data);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error("Error fetching treatments:", error);
+            setLoading(false);
+          });
+      
+    },[] );
   return (
-    <Container style={{ marginTop: "2%" }}>
+    <Container style={{ marginTop: "5%" }}>
+      
     <img src={photo10} alt="gastric baloon" className="img-fluid" />   
       <h2 className="content_header">Exploring Gastric Balloon in Turkey: Procedure, Cost, and Availability</h2>
       <p className="content_text">
@@ -55,6 +85,49 @@ export default function BlogDetails10() {
       <p className="content_text">
         Gastric balloon procedures in Turkey offer a safe, effective, and affordable weight loss solution for individuals looking to improve their health and well-being. At HealTrip Global's plastic surgery clinic, our experienced team is dedicated to providing personalized care and guidance throughout your gastric balloon journey. Contact us to learn more about gastric balloon availability in Turkey and take the first step toward achieving your weight loss goals.
       </p>
+     
+      <div>
+            <Container>
+              <Row>
+                {retreatData.map((retreat) => (
+                  <Col
+                    md={4}
+                    key={retreat.id}
+                    style={{
+                      padding: "1.5%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Link
+                      to={`/treatments/${encodeURIComponent(
+                        retreat.id
+                      )}`}
+                      state={{ retreat }}
+                    >
+                      <div className="link-image">
+                        <Card
+                          className="custom-card-content"
+                          style={{
+                            width: "18rem",
+                          }}
+                        >
+                          <ImageComponentFromBase64
+                            base64String={retreat.image.image}
+                          />
+                          <CardBody>
+                            <CardTitle tag="h5" className="custom-card-header">
+                              {retreat.retreat_name}
+                            </CardTitle>
+                          </CardBody>
+                        </Card>
+                      </div>
+                    </Link>
+                  </Col>
+                ))}
+              </Row>
+            </Container>
+          </div>
     </Container>
   );
 }

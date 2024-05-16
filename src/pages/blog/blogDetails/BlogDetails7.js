@@ -1,10 +1,42 @@
-import React from "react";
-import { Container } from "reactstrap";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Container,Row,Col,CardBody,CardTitle,Card, } from "reactstrap";
 import photo7 from "../Blog7.webp";
+import ImageComponentFromBase64 from "../ImageComponentFromBase64";
+import axios from "axios";
 
 export default function BlogDetails7() {
+  const [retreatData, setRetreatData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const requestData = {
+      retreatNames: ['FUE Hair Transplant','DHI Hair Transplant']
+    };
+
+
+  useEffect(() => {
+    setLoading(true);
+   
+      axios
+        .post(
+          `https://healtrip.azurewebsites.net/retreat/getByName`,{
+            retreatNames: ['FUE Hair Transplant','DHI Hair Transplant']
+          },
+        )
+        .then((response) => {
+          setRetreatData(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching treatments:", error);
+          setLoading(false);
+        });
+    
+  },[] );
+  
   return (
-    <Container style={{ marginTop: "2%" }}>
+    
+    
+    <Container style={{ marginTop: "5%" }}>
       <img src={photo7} alt="Hair Transplant" className="img-fluid" />
       <h2 className="content_header">Hair Transplant Techniques and Procedures</h2>
       <p className="content_text">
@@ -104,6 +136,48 @@ export default function BlogDetails7() {
         <br /><br />
         Choosing the best hair transplant technique in Turkey requires careful consideration of individual needs, preferences, and goals. Whether opting for FUE, FUT, or DHI, it is essential to consult with a qualified hair transplant specialist to assess eligibility and determine the most suitable approach. By understanding the various techniques, evaluating factors such as hair loss severity and donor hair availability, and reviewing clinic credentials and patient outcomes, individuals can make informed decisions to achieve optimal results and restore their confidence.
       </p>
+      <div>
+            <Container>
+              <Row>
+                {retreatData.map((retreat) => (
+                  <Col
+                    md={4}
+                    key={retreat.id}
+                    style={{
+                      padding: "1.5%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Link
+                      to={`/treatments/${encodeURIComponent(
+                        retreat.id
+                      )}`}
+                      state={{ retreat }}
+                    >
+                      <div className="link-image">
+                        <Card
+                          className="custom-card-content"
+                          style={{
+                            width: "18rem",
+                          }}
+                        >
+                          <ImageComponentFromBase64
+                            base64String={retreat.image.image}
+                          />
+                          <CardBody>
+                            <CardTitle tag="h5" className="custom-card-header">
+                              {retreat.retreat_name}
+                            </CardTitle>
+                          </CardBody>
+                        </Card>
+                      </div>
+                    </Link>
+                  </Col>
+                ))}
+              </Row>
+            </Container>
+          </div>
     </Container>
   );
 }

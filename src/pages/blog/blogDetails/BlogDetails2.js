@@ -3,8 +3,10 @@ import { Container } from "reactstrap";
 import photo2 from "../blog2.jpg";
 
 export default function BlogDetails2() {
+ 
+    
   return (
-    <Container style={{ marginTop: "2%" }}>
+    <Container style={{ marginTop: "5%" }}>
       <img src={photo2} alt="Hair Loss" className="img-fluid" />
       <h2 className="content_header">
         Hair Loss in Women: Causes, Prevention, and Treatment

@@ -1,10 +1,43 @@
-import React from "react";
-import { Container } from "reactstrap";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
+import { Container,Row,Col,CardBody,CardTitle,Card, } from "reactstrap";
+import ImageComponentFromBase64 from "../ImageComponentFromBase64";
 import photo1 from "../blog1.jpg";
+import axios from "axios";
+
 
 export default function BlogDetails1() {
+  
+    
+    const [retreatData, setRetreatData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const requestData = {
+      retreatNames: ['nose']
+    };
+  
+    useEffect(() => {
+      setLoading(true);
+     
+        axios
+          .post(
+            `https://healtrip.azurewebsites.net/retreat/getByName`,{
+              retreatNames: ['nose']
+            },
+          )
+          .then((response) => {
+            setRetreatData(response.data);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error("Error fetching treatments:", error);
+            setLoading(false);
+          });
+      
+    },[] );
+
   return (
-    <Container style={{ marginTop: "2%" }}>
+    <Container style={{ marginTop: "5%" }}>
       <img src={photo1} alt="Sude" className="img-fluid" />
       <h2 className="content_header">
         What nose fillers can do for your nose?
@@ -26,6 +59,55 @@ export default function BlogDetails1() {
         <br/><br/>
         If you're interested in nose filler in Turkey, HealTrip Global is here to help. Contact us today to schedule a consultation and learn more about our top-quality plastic surgery services.
       </p>
+      
+      <div>
+            <Container>
+              <Row>
+                {retreatData.map((retreat) => (
+                  <Col
+                    md={4}
+                    key={retreat.id}
+                    style={{
+                      padding: "1.5%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Link
+                      to={`/treatments/${encodeURIComponent(
+                        retreat.id
+                      )}`}
+                      state={{ retreat }}
+                    >
+                      <div className="link-image">
+                        <Card
+                          className="custom-card-content"
+                          style={{
+                            width: "18rem",
+                          }}
+                        >
+                          <ImageComponentFromBase64
+                            base64String={retreat.image.image}
+                          />
+                          <CardBody>
+                            <CardTitle tag="h5" className="custom-card-header">
+                              {retreat.retreat_name}
+                            </CardTitle>
+                          </CardBody>
+                        </Card>
+                      </div>
+                    </Link>
+                  </Col>
+                ))}
+              </Row>
+            </Container>
+          </div>
+
+
+              
+          
     </Container>
+    
+
   );
 }

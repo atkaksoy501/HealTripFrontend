@@ -54,8 +54,8 @@ const Guidance = () => {
             <div style={{ color: "#3c879e",textAlign: "center"}} >
               <h1>3</h1>
               
-              <h3>Operations at the Best Hospital in Istanbul</h3>
-              <p>Surgeries at JCI accredited state-of-art hospitals in Istanbul</p>
+              <h3>Operations at the Best Hospital in Turkey</h3>
+              <p>Surgeries at JCI accredited state-of-art hospitals in Turkey</p>
             </div>
           </Col>
           <Col md={6} className="guidance-item">

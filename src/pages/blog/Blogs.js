@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Blogs.Css";
 import { Container, Row, Col } from "reactstrap";
 import photo1 from "./blog1.jpg";
@@ -16,6 +16,9 @@ import { Link } from "react-router-dom";
 import about_background from "./blog10.jpg"
 
 export default function Blogs() {
+  
+
+  
   return (
     <div style={{ marginTop: "2%" }}>
             <div className="section-title" style={{backgroundImage: `url(${about_background})`}}>
@@ -26,7 +29,7 @@ export default function Blogs() {
         <h2 style={{ color: "#3c879e", fontSize: "1.71rem"}}>Dive Into Our Collection and Discover Something New With Every Click:</h2>
         <Row>
           <Col md={6}>
-          <Link to="/blogs/what-nose-fillers-can-do-for-your-nose" className="blog-link">
+          <Link to="/blogs/nose" className="blog-link">
               <img src={photo1} alt="Sude" className="img-fluid" />
               <h2 className="content_header">
                 What nose fillers can do for your nose?
@@ -131,7 +134,7 @@ export default function Blogs() {
             </Link> 
           </Col>
           <Col md={4}>
-          <Link to="/blogs/What-is-breast-Augmentation-and-Why-is-it-Preferred" className="blog-link">
+          <Link to="/blogs/What-is-Breast-Augmention" className="blog-link">
             <img src={photo9} alt="Sude" className="img-fluid" />
             <h2 className="content_header">
             What is Breast Augmentation and Why is it Preferred?

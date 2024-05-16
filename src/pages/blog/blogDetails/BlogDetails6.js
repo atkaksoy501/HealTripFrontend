@@ -4,7 +4,7 @@ import photo6 from "../blog6.jpg";
 
 export default function BlogDetails6() {
   return (
-    <Container style={{ marginTop: "2%" }}>
+    <Container style={{ marginTop: "5%" }}>
       <img src={photo6} alt="General Anesthesia" className="img-fluid" />
       <h2 className="content_header">General Anesthesia: Purpose, Risks, Preparation, Recovery, and More</h2>
       <p className="content_text">

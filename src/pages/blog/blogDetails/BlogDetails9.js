@@ -1,10 +1,12 @@
 import React from "react";
-import { Container } from "reactstrap";
 import photo9 from "../blog9.jpg";
-export default function BlogDetails9() {
-  return (
+import { Container } from "reactstrap";
 
-    <Container style={{ marginTop: "2%" }}>
+
+export default function BlogDetails9() {
+    return (
+
+    <Container style={{ marginTop: "5%" }}>
     <img src={photo9} alt="breast" className="img-fluid" />
       <h2 className="content_header">What is Breast Augmentation and Why is it Preferred?</h2>
       <p className="content_text">
@@ -40,6 +42,7 @@ export default function BlogDetails9() {
         <br /><br />
         Breast operations are shaped according to personal needs and aesthetic expectations. Turkey is a globally preferred center in this field with its quality and economical treatment options. Healtrip Global provides all the necessary information and support for patients to receive the best treatment in Turkey.
       </p>
+      
     </Container>
   );
 }

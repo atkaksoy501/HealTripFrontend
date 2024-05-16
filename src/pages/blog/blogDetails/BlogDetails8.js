@@ -1,9 +1,39 @@
-import React from "react";
-import { Container } from "reactstrap";
+import React, { useEffect, useState }  from "react";
+import { Link } from "react-router-dom";
+import { Container,Row,Col,CardBody,CardTitle,Card,  } from "reactstrap";
+import ImageComponentFromBase64 from "../ImageComponentFromBase64";
 import photo8 from "../blog8.jpg";
+import axios from "axios";
+
 export default function BlogDetails8() {
+  const [retreatData, setRetreatData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const requestData = {
+      retreatNames: ['nose']
+    };
+  
+    useEffect(() => {
+      setLoading(true);
+     
+        axios
+          .post(
+            `https://healtrip.azurewebsites.net/retreat/getByName`,{
+              retreatNames: ['nose']
+            },
+          )
+          .then((response) => {
+            setRetreatData(response.data);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error("Error fetching treatments:", error);
+            setLoading(false);
+          });
+      
+    },[] );
+
     return (
-      <Container style={{ marginTop: "2%" }}>
+      <Container style={{ marginTop: "5%" }}>
         <img src={photo8} alt="rinoplasti" className="img-fluid" />
         <h2 className="content_header">How Much Does Rhinoplasty Cost in Turkey?</h2>
         <p className="content_text">
@@ -33,6 +63,48 @@ export default function BlogDetails8() {
         <p className="content_text">
           Rhinoplasty prices in Turkey vary based on several factors. However, Turkey generally offers more affordable rates compared to other countries. Before getting rhinoplasty in Turkey, it is important to obtain price quotes from different surgeons and gather information about the risks involved. In this regard, Healtrip Global can be considered. Explore the services offered by Healtrip Global for a reliable and cost-effective rhinoplasty operation.
         </p>
+        <div>
+            <Container>
+              <Row>
+                {retreatData.map((retreat) => (
+                  <Col
+                    md={4}
+                    key={retreat.id}
+                    style={{
+                      padding: "1.5%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Link
+                      to={`/treatments/${encodeURIComponent(
+                        retreat.id
+                      )}`}
+                      state={{ retreat }}
+                    >
+                      <div className="link-image">
+                        <Card
+                          className="custom-card-content"
+                          style={{
+                            width: "18rem",
+                          }}
+                        >
+                          <ImageComponentFromBase64
+                            base64String={retreat.image.image}
+                          />
+                          <CardBody>
+                            <CardTitle tag="h5" className="custom-card-header">
+                              {retreat.retreat_name}
+                            </CardTitle>
+                          </CardBody>
+                        </Card>
+                      </div>
+                    </Link>
+                  </Col>
+                ))}
+              </Row>
+            </Container>
+          </div>
       </Container>
     );
   }

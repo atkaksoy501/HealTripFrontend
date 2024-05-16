@@ -45,7 +45,7 @@ function App() {
         <Route path="/about-us" Component={AboutUs} />
         <Route path="/guidance" Component={Guidance} />
         <Route path="/blogs" Component={Blogs} />
-        <Route path="/blogs/what-nose-fillers-can-do-for-your-nose" Component={BlogDetails1} />
+        
         <Route path="/blogs/hair-loss-is-a-common-problem-that-affects-millions-of-women" Component={BlogDetails2} />
         <Route path="/blogs/How-To-Maintain-Good-Oral-Hygiene" Component={BlogDetails3} />
         <Route path="/blogs/Hair-Loss-for-Men" Component={BlogDetails4} />
@@ -53,8 +53,9 @@ function App() {
         <Route path="/blogs/Everything-You-Need-to-Know-About-General-Anaesthesia" Component={BlogDetails6} />
         <Route path="/blogs/Hair-Transplant-Techniques-and-Procedures" Component={BlogDetails7} />
         <Route path="/blogs/How-Much-Does-Rhinoplasty-Cost-in-Turkey" Component={BlogDetails8} />
-        <Route path="/blogs/What-is-breast-Augmentation-and-Why-is-it-Preferred" Component={BlogDetails9} />
+        <Route path="/blogs/What-is-Breast-Augmention" Component={BlogDetails9} />
         <Route path="/blogs/Exploring-Gastric-Balloon-in-Turkey" Component={BlogDetails10} />
+        <Route path="/blogs/:retreat_name" Component={BlogDetails1} />
         <Route path="/aesthetic-surgery-patient-stories" Component={PatientStories1} />
         <Route path="/dental-treatments-patient-stories" Component={PatientStories2} />
         <Route path="/metabolic-surgery-patient-stories" Component={PatientStories3} />
