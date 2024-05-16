@@ -12,8 +12,8 @@ export default function Hospital() {
   const { hospital_id } = useParams();
   const [hospitalData, setHospitalData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [selectedDepartmentId, setSelectedDepartmentId] = useState(1);
-  const [selectedDepartmentName, setSelectedDepartmentName] = useState("Aesthetic Surgery");
+  const [selectedDepartmentId, setSelectedDepartmentId] = useState();
+  const [selectedDepartmentName, setSelectedDepartmentName] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [tokenExists, setTokenExists] = useState(false);
 
@@ -111,7 +111,7 @@ export default function Hospital() {
             </p>
           </Col>
           <div style={{display:"flex", justifyContent:"center"}}>
-            <Button className="button" style={{ backgroundColor: '#295D6D', fontSize:"18px", borderRadius:"20px", width:"36%", fontWeight:"bold", marginTop:"30px", marginBottom:"40px"}} onClick={togglePopup}><span>Contact with {hospitalData.hospitalName}</span></Button> 
+            <Button className="button" style={{ backgroundColor: '#295D6D', fontSize:"18px", borderRadius:"20px", width:"70%", fontWeight:"bold", marginTop:"30px", marginBottom:"40px"}} onClick={togglePopup}><span>Contact with {hospitalData.hospitalName}</span></Button> 
           </div>
       
           <HospitalDepartments hospital_id={hospital_id} onDepartmentClick={handleDepartmentClick} />

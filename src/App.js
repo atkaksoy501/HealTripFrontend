@@ -26,7 +26,6 @@ import BlogDetails7 from "./pages/blog/blogDetails/BlogDetails7";
 import BlogDetails8 from "./pages/blog/blogDetails/BlogDetails8";
 import BlogDetails9 from "./pages/blog/blogDetails/BlogDetails9";
 import BlogDetails10 from "./pages/blog/blogDetails/BlogDetails10";
-import PatientStories from "./pages/guidance/PatientStories";
 import PatientStories1 from "./pages/guidance/PatientStories1";
 import PatientStories2 from "./pages/guidance/PatientStories2";
 import PatientStories3 from "./pages/guidance/PatientStories3";

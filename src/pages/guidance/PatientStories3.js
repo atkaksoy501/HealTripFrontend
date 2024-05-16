@@ -1,5 +1,4 @@
 import React from 'react';
-import PatientStories from './PatientStories';
 import { Container, Row, Col } from "reactstrap";
 import midebalonu from "./mide-balonu-700x311.jpg";
 import photo1 from "./obezite.webp";
