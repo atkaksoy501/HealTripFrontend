@@ -102,11 +102,7 @@ export default function BlogDetails1() {
               </Row>
             </Container>
           </div>
-
-
-              
-          
-    </Container>
+</Container>
     
 
   );
