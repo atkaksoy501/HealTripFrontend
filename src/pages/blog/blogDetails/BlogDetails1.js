@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ClipLoader from "react-spinners/ClipLoader";
 import { Container,Row,Col,CardBody,CardTitle,Card, } from "reactstrap";
 import ImageComponentFromBase64 from "../ImageComponentFromBase64";
 import photo1 from "../blog1.jpg";
@@ -11,13 +10,9 @@ export default function BlogDetails1() {
   
     
     const [retreatData, setRetreatData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const requestData = {
-      retreatNames: ['nose']
-    };
+
   
     useEffect(() => {
-      setLoading(true);
      
         axios
           .post(
@@ -27,11 +22,9 @@ export default function BlogDetails1() {
           )
           .then((response) => {
             setRetreatData(response.data);
-            setLoading(false);
           })
           .catch((error) => {
             console.error("Error fetching treatments:", error);
-            setLoading(false);
           });
       
     },[] );

@@ -7,13 +7,9 @@ import axios from "axios";
 
 export default function BlogDetails8() {
   const [retreatData, setRetreatData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const requestData = {
-      retreatNames: ['nose']
-    };
+
   
     useEffect(() => {
-      setLoading(true);
      
         axios
           .post(
@@ -23,11 +19,9 @@ export default function BlogDetails8() {
           )
           .then((response) => {
             setRetreatData(response.data);
-            setLoading(false);
           })
           .catch((error) => {
             console.error("Error fetching treatments:", error);
-            setLoading(false);
           });
       
     },[] );

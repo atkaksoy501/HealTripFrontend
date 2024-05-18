@@ -7,14 +7,10 @@ import axios from "axios";
 
 export default function BlogDetails7() {
   const [retreatData, setRetreatData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const requestData = {
-      retreatNames: ['FUE Hair Transplant','DHI Hair Transplant']
-    };
+
 
 
   useEffect(() => {
-    setLoading(true);
    
       axios
         .post(
@@ -24,11 +20,9 @@ export default function BlogDetails7() {
         )
         .then((response) => {
           setRetreatData(response.data);
-          setLoading(false);
         })
         .catch((error) => {
           console.error("Error fetching treatments:", error);
-          setLoading(false);
         });
     
   },[] );

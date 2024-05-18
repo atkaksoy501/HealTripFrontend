@@ -2,18 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Container,Row,Col,CardBody,CardTitle,Card, } from "reactstrap";
 import photo3 from "../blog3.jpg";
-import { TenMp } from "@mui/icons-material";
 import axios from "axios";
 import ImageComponentFromBase64 from "../ImageComponentFromBase64";
 
 export default function BlogDetails3() {
   const [retreatData, setRetreatData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const requestData = {
-      retreatNames: ['Dental Crown','Dental Bridge','Teeth Whitening','Tooth Extraction','Dental Implant']
-    };
+
   useEffect(() => {
-    setLoading(true);
    
       axios
         .post(
@@ -23,11 +18,9 @@ export default function BlogDetails3() {
         )
         .then((response) => {
           setRetreatData(response.data);
-          setLoading(false);
         })
         .catch((error) => {
           console.error("Error fetching treatments:", error);
-          setLoading(false);
         });
     
   },[] );
