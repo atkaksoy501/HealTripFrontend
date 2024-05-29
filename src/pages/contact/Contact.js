@@ -22,6 +22,7 @@ import { Container, Row, Col } from "reactstrap";
 import Swal from 'sweetalert2';
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -31,6 +32,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [address, setAddress] = useState("");
+  const navigate = useNavigate();
 
   const handleSave = async (e) => {
     setLoading(true);
@@ -54,6 +56,7 @@ export default function Contact() {
       if (response.status === 200) {
         Swal.fire("Success!", "Your Form Is Sent.", "success");
         setTimeout(function () {
+          navigate("/");
           window.location.reload();
         }, 2000);
       } else {
