@@ -7,7 +7,7 @@ import photo3 from "./blog3.jpg";
 import photo4 from "./blog4.jpg";
 import photo5 from "./blog5.jpg";
 import photo6 from "./blog6.jpg";
-import photo7 from "./Blog7.webp";
+import photo7 from "./blog7.jpg";
 import photo8 from "./blog8.jpg";
 import photo9 from "./blog9.jpg";
 import photo10 from "./blog10.jpg";

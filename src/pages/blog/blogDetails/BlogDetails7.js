@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Container,Row,Col,CardBody,CardTitle,Card, } from "reactstrap";
-import photo7 from "../Blog7.webp";
+import photo7 from "../blog7.jpg";
 import ImageComponentFromBase64 from "../ImageComponentFromBase64";
 import axios from "axios";
 
